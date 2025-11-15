@@ -1,0 +1,74 @@
+#MainArea{
+    width: 276px;
+    height: 400px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    box-sizing:border-box;
+    background: radial-gradient(77.17% 108.57% at 14.13% 11.44%, rgba(190, 212, 232, 0.00) 0%, rgba(115, 186, 248, 0.56) 100%), #CED7EB;
+}
+#MainArea:hover{
+    width: 276px;
+    height: 400px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    background: radial-gradient(89.36% 118.46% at 0% 0%, rgba(174, 205, 238, 0.00) 0%, #B7CAF4 100%), #B7CAF4;
+    box-shadow: 0 0 15.2px 0 #4F70B8, 0 0 13.1px 0 rgba(150, 189, 222, 0.33);
+    #ProfileName{
+        color: #1E376C;
+    }
+}
+#ProfileArea{
+    display: flex;
+    width: 276px;
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+}
+#ProfilePic {
+    width: 200px;
+    height: 200px;
+    margin-top: 20px;
+    aspect-ratio: 1/1;
+    border-radius: 125px;
+    border: 4px solid #4F70B8;
+    background:lightgray 0px 0px / 100% 133.333% no-repeat;
+}
+#ProfileName{
+    color: #4F70B8;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 32px;
+    font-style: italic;
+    font-weight: 700;
+    line-height: normal;
+}
+#ItemList{
+    display: flex;
+    width: auto;
+    height: 90px;
+    min-height: 80px;
+    max-height: 91px;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    background: #4f70b84c;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding-top: 20px;
+    box-sizing: border-box;
+}
+.listItem{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+}
+.listItemText{
+    color: #FFF;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
