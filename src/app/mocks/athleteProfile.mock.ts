@@ -9,6 +9,7 @@ export const ATHLETE_PROFILE_MOCK: Athlete = {
   age: 35,
   weight: 95,
   height: 206, // cm
+  focus: 'Força',
   level: 'Sênior',
   status: 'Ok',
   medicalConditions: [

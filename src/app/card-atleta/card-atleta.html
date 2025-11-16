@@ -1,27 +1,27 @@
 <div id="MainArea">
     <div id="ProfileArea">
             <i class="fa-solid fa-chevron-right" style="font-size: 30.33px; align-self: flex-end; margin-right: 5px; margin-top: 10px; position: absolute;"></i>
-            <img src = "" id="ProfilePic">
-        <h1 id = "ProfileName">Nome</h1>
+            <img src = {{photoURL}} id="ProfilePic">
+        <h1 id = "ProfileName">{{name}}</h1>
     </div>
     
     <div id = "InfoBar">
         <div id="ItemList">
             <div class="listItem">
                     <i class="fa-solid fa-weight-scale" style="font-size: 30.333px; color: white;"></i>
-                    <p class="listItemText">Peso</p>
+                    <p class="listItemText">{{weight}}</p>
                 </div>
             <div class="listItem"> 
                 <i class="fa-solid fa-ruler" style="font-size: 30.333px; color: white;"></i>
-                <p class="listItemText">Altura</p>
+                <p class="listItemText">{{height}}</p>
             </div>
             <div class="listItem"> 
                 <i class="fa-solid fa-clock" style="font-size: 30.333px; color: white;"></i>
-                    <p class="listItemText">Idade</p>
+                    <p class="listItemText">{{age}}</p>
                 </div>
             <div class="listItem"> 
                 <i class="fa-solid fa-bullseye" style="font-size: 30.333px; color: white;"></i>
-                <p class="listItemText">Foco</p>
+                <p class="listItemText">{{focus}}</p>
             </div>
             </div>
     </div>
