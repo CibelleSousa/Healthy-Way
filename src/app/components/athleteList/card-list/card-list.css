@@ -1,0 +1,12 @@
+#AthleteCard{
+    display:flex;
+    flex-direction: row;
+    
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 5px;
+    align-items: center;
+    row-gap: 5px;
+    margin-left: 10px;
+    
+}
