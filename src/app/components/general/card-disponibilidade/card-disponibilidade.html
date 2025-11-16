@@ -1,0 +1,40 @@
+
+<div class = "container">
+    <div class = "title">
+        <h1>Disponibilidade - Últimos 30 dias</h1>
+    </div>
+
+    <div class="wrapper">
+        <div class="chart-area">
+                <div class="center-text">
+                <div class="percent">{{ centerPercent }}%</div>
+                <div class="label">{{ centerLabel }}</div>
+                </div>
+
+                <p-chart
+                type="doughnut"
+                [data]="data"
+                [options]="options"
+                width="200"
+                height="200">
+                </p-chart>
+        </div>
+
+        <div class="legendas">
+                <div class="legenda-item">
+                    <span class="cor apto"></span>
+                    <span class="legenda-text apto-text">Apto ({{ availability.fitDays }} dias)</span>
+                </div>
+
+                <div class="legenda-item">
+                    <span class="cor restrito"></span>
+                    <span class="legenda-text restrito-text">Restrito ({{ availability.restrictedDays }} dias)</span>
+                </div>
+
+                <div class="legenda-item">
+                    <span class="cor lesionado"></span>
+                    <span class="legenda-text lesionado-text">Lesionado ({{ availability.injuredDays }} dias)</span>
+                </div>
+        </div>
+    </div>
+</div>

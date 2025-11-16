@@ -52,8 +52,8 @@ export const ATHLETE_PROFILE_MOCK: Athlete = {
   },
   availabilityLast30Days: {
     fitPercentage: 75,
-    fitDays: 22,
-    restrictedDays: 5,
-    injuredDays: 3
+    fitDays: 24,
+    restrictedDays: 3,
+    injuredDays: 5
   }
 };
