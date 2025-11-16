@@ -6,29 +6,41 @@
   font-weight: 400;
   font-style: normal;
 }
-
 .header-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between; 
   align-items: center; 
-  
   height: 60px;
-  padding: 0 25px; 
-  
+  padding: 0px;
+  padding-right: 25px;
   background-color: #111114; 
-  color: #ffffff; 
+  color: #fafafa;
+  position: sticky;
+  top: 0;
+  z-index: 100; 
 }
 .header-left {
   display: flex;
   align-items: center; 
-  gap: 10px;
+}
+.icon-button.menu-button {
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 25px; 
+  cursor: pointer;
+  padding: 5px 0;
 }
 .logo-link {
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: #ffffff;
+  color: #fafafa;
   cursor: pointer;
 }
 .logo-link img {
@@ -43,7 +55,6 @@
   font-size: 25px; 
   cursor: pointer;
 }
-
 .notification-button  {
     font-size: 20;
 }

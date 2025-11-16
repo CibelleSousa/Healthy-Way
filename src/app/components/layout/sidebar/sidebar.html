@@ -1,0 +1,26 @@
+<div class="sidebar-wrapper">  
+    
+    <div class="nav-list-container">
+        <a *ngFor="let item of navItems" 
+           href="#" 
+           class="nav-item" 
+           [title]="isExpanded ? '' : item.label">
+            
+            <i [class]="item.icon"></i>
+            <span *ngIf="isExpanded" class="nav-label">{{ item.label }}</span>
+        </a>
+    </div>
+
+    <div class="profile-footer" *ngIf="isExpanded">
+        <img src="/Lions_Clubs_International_logo.png" alt="Perfil" class="profile-pic">
+        <div class="profile-info">
+        <span class="profile-name">Lions Club International</span>
+        <span class="profile-email">lionsclub@healthyway.com.br</span>
+        </div>
+        <i class="fa-solid fa-arrow-right-from-bracket logout-icon"></i>
+    </div>
+
+    <div class="profile-footer-collapsed" *ngIf="!isExpanded">
+        <img src="/Lions_Clubs_International_logo.png" alt="Perfil" class="profile-pic">
+    </div>
+</div>

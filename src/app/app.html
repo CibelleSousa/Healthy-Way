@@ -1,2 +1,14 @@
-<app-card-atleta></app-card-atleta>
-<router-outlet></router-outlet>
+<app-header (menuToggle)="toggleSidebar()"></app-header>
+<mat-sidenav-container class="app-container">
+
+  <mat-sidenav mode="side" opened="true" class="app-sidenav" [class.expanded]="isSidebarExpanded">
+    <app-sidebar [isExpanded]="isSidebarExpanded"></app-sidebar> 
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div class="app-content" [class.blurred]="isSidebarExpanded">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
