@@ -1,11 +1,12 @@
 <div class="sidebar-wrapper">  
     
     <div class="nav-list-container">
-        <a *ngFor="let item of navItems" 
-           href="#" 
-           class="nav-item" 
+        <a *ngFor="let item of navItems"
+           [routerLink]="item.route"
+           routerLinkActive="active"
+           class="nav-item"
            [title]="isExpanded ? '' : item.label">
-            
+
             <i [class]="item.icon"></i>
             <span *ngIf="isExpanded" class="nav-label">{{ item.label }}</span>
         </a>
