@@ -9,6 +9,7 @@ export const ATHLETE_PROFILE_MOCK: Athlete = {
   age: 35,
   weight: 95,
   height: 206, // cm
+  focus: 'Força',
   level: 'Sênior',
   status: 'Ok',
   medicalConditions: [
@@ -51,8 +52,8 @@ export const ATHLETE_PROFILE_MOCK: Athlete = {
   },
   availabilityLast30Days: {
     fitPercentage: 75,
-    fitDays: 22,
-    restrictedDays: 5,
-    injuredDays: 3
+    fitDays: 24,
+    restrictedDays: 3,
+    injuredDays: 5
   }
 };

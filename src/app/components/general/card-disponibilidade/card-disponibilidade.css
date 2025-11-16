@@ -1,0 +1,97 @@
+
+.container{
+    width: 574px;
+    height: 287px;
+    border-radius: 10px;
+    font-family: "Roboto", sans-serif;
+    background: #25252D;
+    align-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+}
+
+.title{
+    font-weight: bold;
+    align-content: center;
+    text-align: center;
+    color: #ffffff;
+}
+.wrapper {
+  max-width: 437px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  gap: 16px;
+}
+
+.chart-area {
+  position: relative;
+  width: 180px;
+  height: 180px;
+}
+
+/* Texto central sobre o canvas */
+.center-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  pointer-events: none;
+  color: #ffffff;
+  z-index: 2;
+}
+
+.center-text .percent {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.center-text .label {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.6px;
+  margin-top: 4px;
+}
+
+/* Legendas à direita */
+.legendas {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 500; 
+}
+
+.legenda-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cor {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+}
+
+/* Cores do quadradinho */
+.apto { background-color: #962DFF; }
+.restrito { background-color: #C893FD; }
+.lesionado { background-color: #E0C6FD; }
+
+/* Texto das legendas pintado */
+.legenda-text.apto-text { color: #962DFF; }
+.legenda-text.restrito-text { color: #C893FD; }
+.legenda-text.lesionado-text { color: #E0C6FD; }
+
+/* Garantir que o canvas ocupe o container corretamente */
+.chart-area ::ng-deep canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
