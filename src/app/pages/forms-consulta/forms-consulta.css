@@ -1,0 +1,324 @@
+/* Container principal da página */
+.page-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Título principal */
+.title {
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  text-align: center;
+  letter-spacing: -0.5px;
+}
+
+/* Formulário completo */
+.form-full {
+  background: linear-gradient(145deg, #1E1E1E 0%, #252525 100%);
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  color: white;
+  border: 1px solid #2A2A2A;
+}
+
+/* Seções do formulário */
+section {
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #2A2A2A;
+}
+
+section:last-of-type {
+  border-bottom: none;
+}
+
+/* Títulos das seções */
+h3 {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #7261A3;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Subtítulos (h4) */
+h4 {
+  color: #B0B0B0;
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Labels */
+label {
+  display: block;
+  margin-bottom: 20px;
+  color: #B0B0B0;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+/* Labels com checkbox */
+label:has(input[type="checkbox"]) {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+label:has(input[type="checkbox"]) input {
+  width: auto;
+  margin: 0;
+}
+
+/* Grupo de checkboxes */
+.checkbox-group {
+  margin-bottom: 20px;
+}
+
+.checkbox-group-label {
+  display: block;
+  margin-bottom: 12px;
+  color: #B0B0B0;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.checkbox-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  background-color: #2B2B2B;
+  border: 1px solid #3D3D3D;
+  border-radius: 8px;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 15px;
+  padding: 8px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.checkbox-item:hover {
+  background-color: #323232;
+}
+
+.checkbox-item input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #7261A3;
+  margin: 0;
+}
+
+/* Inputs, textareas e selects */
+input:not([type="checkbox"]),
+textarea,
+select {
+  background-color: #2B2B2B;
+  color: white;
+  border: 1px solid #3D3D3D;
+  padding: 14px 16px;
+  width: 100%;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  font-family: inherit;
+  margin-top: 8px;
+}
+
+/* Checkbox styling */
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #7261A3;
+}
+
+/* Estados de foco e hover */
+input:not([type="checkbox"]):focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #7261A3;
+  background-color: #323232;
+  box-shadow: 0 0 0 3px rgba(114, 97, 163, 0.1);
+}
+
+input:not([type="checkbox"]):hover,
+textarea:hover,
+select:hover {
+  border-color: #4A4A4A;
+}
+
+input:disabled {
+  background-color: #222222;
+  color: #666666;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Textarea */
+textarea {
+  min-height: 120px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+/* Select customizado */
+select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%237261A3' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+}
+
+select[multiple] {
+  min-height: 120px;
+  padding: 10px;
+}
+
+select option {
+  background-color: #2B2B2B;
+  color: white;
+  padding: 10px;
+}
+
+/* Container dos botões */
+.button-row {
+  display: flex;
+  gap: 15px;
+  margin-top: 40px;
+  justify-content: flex-end;
+}
+
+/* Botões gerais */
+button {
+  padding: 14px 32px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  min-width: 150px;
+}
+
+/* Botão salvar */
+button.save {
+  background: linear-gradient(135deg, #7261A3 0%, #5d4f8a 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(114, 97, 163, 0.3);
+}
+
+button.save:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(114, 97, 163, 0.4);
+  background: linear-gradient(135deg, #5d4f8a 0%, #7261A3 100%);
+}
+
+button.save:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+button.save:disabled {
+  background: linear-gradient(135deg, #3A3A3A 0%, #2A2A2A 100%);
+  cursor: not-allowed;
+  opacity: 0.5;
+  box-shadow: none;
+}
+
+/* Botão cancelar */
+button.cancel {
+  background: transparent;
+  color: #B0B0B0;
+  border: 1px solid #3D3D3D;
+}
+
+button.cancel:hover {
+  background-color: #2B2B2B;
+  border-color: #4A4A4A;
+  color: #ffffff;
+}
+
+/* Grid layout para campos lado a lado */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.grid-2 label {
+  margin-bottom: 0;
+}
+
+/* Animação suave ao carregar */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .page-container {
+    padding: 15px;
+    margin: 20px auto;
+  }
+
+  .form-full {
+    padding: 24px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+
+  .button-row {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+  
