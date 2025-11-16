@@ -8,10 +8,12 @@ import { CommonModule } from '@angular/common';
 import { CardList } from "./components/athleteList/card-list/card-list";
 import { AbasNavegacaoComponent } from "./components/abas-navegacao/abas-navegacao"; 
 import { Info } from './components/athleteProfile/info/info';
+import { CardDisponibilidade } from "./components/general/card-disponibilidade/card-disponibilidade";
+import { Stats } from "./components/athleteProfile/stats/stats";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, CommonModule, MatSidenavModule, Header, Sidebar, CardAtleta, CardList, AbasNavegacaoComponent, Info],
+  imports: [RouterOutlet, CommonModule, MatSidenavModule, Header, Sidebar, CardAtleta, CardList, AbasNavegacaoComponent, Info, CardDisponibilidade, Stats],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
