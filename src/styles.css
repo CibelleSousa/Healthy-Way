@@ -35,3 +35,16 @@
     opacity: .9;
   }
   
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+  height: 100%;    /* 1. Ocupa 100% da tela */
+
+}
+* {
+  box-sizing: border-box;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
