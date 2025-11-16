@@ -4,11 +4,14 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { CardAtleta } from './card-atleta/card-atleta';
 import { Header } from './components/layout/header/header';
 import { Sidebar } from './components/layout/sidebar/sidebar';
-import { CommonModule } from '@angular/common'; 
+import { CommonModule } from '@angular/common';
+import { CardList } from "./components/athleteList/card-list/card-list";
+import { AbasNavegacaoComponent } from "./components/abas-navegacao/abas-navegacao"; 
+import { Info } from './components/athleteProfile/info/info';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, CommonModule, MatSidenavModule, Header, Sidebar, CardAtleta],
+  imports: [RouterOutlet, CommonModule, MatSidenavModule, Header, Sidebar, CardAtleta, CardList, AbasNavegacaoComponent, Info],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
