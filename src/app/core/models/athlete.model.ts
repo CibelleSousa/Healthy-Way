@@ -12,6 +12,7 @@ export default interface Athlete {
   weight: number;
   height: number;
   focus: string;
+  gender: string;
   level: levelType;
   status: statusType;
   medicalConditions: string[];

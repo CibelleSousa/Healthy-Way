@@ -1,0 +1,141 @@
+
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+
+.card {
+  width: 100%;
+  max-width: 350px;
+  background-color: #25252D; 
+  border-radius: 12px;
+  overflow: hidden;
+  color: #ffffff;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); 
+}
+
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #64328b; 
+  padding: 1rem 1.25rem;
+  color: white;
+}
+
+.container-paciente {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.icone-card{
+  font-size: 24px; /* Controla o tamanho do ícone */
+  color: white;
+  width: 24px;  /* Ajuda a manter o alinhamento do layout */
+  text-align: center; /* Centraliza o ícone no espaço */
+}
+
+.nome-paciente {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.sexo-paciente {
+  font-size: 1.45rem;
+  /*font-weight: 700;*/
+  font-style: italic;
+}
+
+.card-body {
+  padding: 1.25rem 1.5rem 1.75rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.5rem; 
+}
+
+/* Ajuste dos boxes */
+.stat-item {
+  border-radius: 8px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; 
+}
+
+.box-parte-cima {
+  background-color: #8A4DC2; 
+  padding: 0.5rem;
+}
+
+.box-parte-baixo {
+  background-color: #713A9D; 
+  padding: 0.5rem;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.texto-acima-box {
+  font-family: roboto;
+  color: #ffffffd9;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.texto-abaixo-box {
+    font-family: roboto;
+  color: white;
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0;
+}
+
+
+/* Seção "Condições médicas" */
+.section-title {
+  font-family: roboto;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #F9FAFB;
+  margin-top: 0;
+  margin-bottom: 1rem; 
+  padding-bottom: 0.75rem; 
+  border-bottom: 1px solid #4a4a4a; 
+}
+
+.medical-conditions ul {
+  font-family: roboto;
+  font-weight: 300;
+  list-style-type: disc;
+  padding-left: 1.25rem; 
+  color: #e0e0e0;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.medical-conditions li {
+  margin-bottom: 0.5rem;
+}
+
+.medical-conditions li:last-child {
+  margin-bottom: 0;
+}
+
+.medical-conditions li::marker {
+  color: #e0e0e0;
+}

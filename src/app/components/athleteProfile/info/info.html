@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="card">
+    <header class="card-header">
+      <div class="container-paciente">
+        <i class="fa-solid fa-basketball icone-card"></i>
+        <h1 class="nome-paciente">{{ Atleta.name }}</h1>
+      </div>
+      <span class="sexo-paciente">{{ Atleta.gender}}</span>
+    </header>
+
+    <main class="card-body">
+      <section class="stats-grid">
+            <div class="stat-item">
+                <div class="box-parte-cima">
+                    <p class = "texto-acima-box">Idade</p>
+                </div>
+                <div class="box-parte-baixo">
+                    <p class="texto-abaixo-box">{{Atleta.age}}</p>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="box-parte-cima">
+                    <p class = "texto-acima-box">Nível</p>
+                </div>
+                <div class="box-parte-baixo">
+                    <p class="texto-abaixo-box">{{Atleta.level}}</p>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="box-parte-cima">
+                    <p class = "texto-acima-box">Status</p>
+                </div>
+                <div class="box-parte-baixo">
+                    <p class="texto-abaixo-box">{{Atleta.status}}</p>
+                </div>
+            </div>
+      </section>
+
+      <section class="medical-conditions">
+        <h2 class="section-title">Condições Médicas</h2>
+        <ul>
+          @for (condition of Atleta.medicalConditions; track condition) {
+            <li>{{ condition }}</li>
+          }
+        </ul>
+      </section>
+    </main>
+  </div>
+</div>
+
+  <div class="pagina"> 
+
+  <div class="cartao">
+    </div>
+
+  <aside class="disponibilidade-card">
+    </aside>
+
+</div>
