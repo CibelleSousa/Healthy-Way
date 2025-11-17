@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
 import { CardList } from "./components/athleteList/card-list/card-list";
 import { AbasNavegacaoComponent } from "./components/abas-navegacao/abas-navegacao"; 
 import { Info } from './components/athleteProfile/info/info';
-import { CardDisponibilidade } from "./components/general/card-disponibilidade/card-disponibilidade";
+import { CardDisponibilidade } from "./components/athleteProfile/card-disponibilidade/card-disponibilidade";
 import { CardCalorias } from './components/athleteProfile/card-calorias/card-calorias';
 import { CardQueixas } from './components/athleteProfile/card-queixas/card-queixas';
 import { Stats } from "./components/athleteProfile/stats/stats";
