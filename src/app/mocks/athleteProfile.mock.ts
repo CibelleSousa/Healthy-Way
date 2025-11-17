@@ -11,6 +11,7 @@ export const ATHLETE_PROFILE_MOCK: Athlete = {
   height: 206, // cm
   focus: 'Força',
   level: 'Sênior',
+  gender: 'M',
   status: 'Ok',
   medicalConditions: [
     'Bronquite Asmática',
