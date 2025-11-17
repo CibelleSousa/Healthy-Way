@@ -11,6 +11,7 @@ export const ATHLETE_PROFILE_MOCK: Athlete = {
   height: 206, // cm
   focus: 'Força',
   level: 'Sênior',
+  gender: 'M',
   status: 'Ok',
   medicalConditions: [
     'Bronquite Asmática',
@@ -51,9 +52,9 @@ export const ATHLETE_PROFILE_MOCK: Athlete = {
     testosterone: { value: 800, status: 'Muito Bom' }
   },
   availabilityLast30Days: {
-    fitPercentage: 75,
-    fitDays: 24,
-    restrictedDays: 3,
+    fitPercentage: 70,
+    fitDays: 21,
+    restrictedDays: 4,
     injuredDays: 5
   }
 };

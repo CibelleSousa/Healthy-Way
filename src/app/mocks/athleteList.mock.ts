@@ -9,6 +9,7 @@ export const ATHLETE_LIST_MOCK: Athlete[] = [
     weight: 95,
     height: 206,
     focus: 'Força',
+    gender: 'M',
     level: 'Sênior', 
     status: 'Ok',
     medicalConditions: ['Bronquite Asmática']
@@ -21,6 +22,7 @@ export const ATHLETE_LIST_MOCK: Athlete[] = [
     weight: 60,
     height: 163,
     focus: 'Força',
+    gender: 'F',
     level: 'Sênior', 
     status: 'Ok', 
     medicalConditions: [] 
@@ -33,6 +35,7 @@ export const ATHLETE_LIST_MOCK: Athlete[] = [
     weight: 84,
     height: 188,
     focus: 'Força',
+    gender: 'M',
     level: 'Sênior', 
     status: 'Lesionado', 
     medicalConditions: []
@@ -45,6 +48,7 @@ export const ATHLETE_LIST_MOCK: Athlete[] = [
     weight: 91,
     height: 193,
     focus: 'Força',
+    gender: 'M',
     level: 'Sênior', 
     status: 'Ok', 
     medicalConditions: []
@@ -57,6 +61,7 @@ export const ATHLETE_LIST_MOCK: Athlete[] = [
     weight: 104,
     height: 201,
     focus: 'Recu.',
+    gender: 'M',
     level: 'Júnior', 
     status: 'Restringido', 
     medicalConditions: []
@@ -69,6 +74,7 @@ export const ATHLETE_LIST_MOCK: Athlete[] = [
     weight: 129,
     height: 211,
     focus: 'Recu.',
+    gender: 'M',
     level: 'Sênior', 
     status: 'Ok', 
     medicalConditions: []
@@ -81,6 +87,7 @@ export const ATHLETE_LIST_MOCK: Athlete[] = [
     weight: 58,
     height: 165,
     focus: 'Recu.',
+    gender: 'F',
     level: 'Júnior',
     status: 'Ok',
     medicalConditions: []
@@ -93,6 +100,7 @@ export const ATHLETE_LIST_MOCK: Athlete[] = [
     weight: 82,
     height: 185,
     focus: 'Recu.',
+    gender: 'M',
     level: 'Sênior',
     status: 'Restringido',
     medicalConditions: ['Asma leve']
@@ -105,6 +113,7 @@ export const ATHLETE_LIST_MOCK: Athlete[] = [
     weight: 125,
     height: 208,
     focus: 'Recu.',
+    gender: 'M',
     level: 'Sênior',
     status: 'Ok',
     medicalConditions: []
@@ -117,6 +126,7 @@ export const ATHLETE_LIST_MOCK: Athlete[] = [
     weight: 62,
     height: 170,
     focus: 'Emag.',
+    gender: 'F',
     level: 'Sênior',
     status: 'Lesionado',
     medicalConditions: ['Torção no tornozelo']
@@ -129,6 +139,7 @@ export const ATHLETE_LIST_MOCK: Athlete[] = [
     weight: 90,
     height: 190,
     focus: 'Emag.',
+    gender: 'M',
     level: 'Júnior',
     status: 'Ok',
     medicalConditions: []
@@ -141,6 +152,7 @@ export const ATHLETE_LIST_MOCK: Athlete[] = [
     weight: 100,
     height: 198,
     focus: 'Emag.',
+    gender: 'M',
     level: 'Júnior',
     status: 'Ok',
     medicalConditions: []
@@ -153,6 +165,7 @@ export const ATHLETE_LIST_MOCK: Athlete[] = [
     weight: 65,
     height: 175,
     focus: 'Emag.',
+    gender: 'F',
     level: 'Sênior',
     status: 'Restringido',
     medicalConditions: []
@@ -165,6 +178,7 @@ export const ATHLETE_LIST_MOCK: Athlete[] = [
     weight: 98,
     height: 202,
     focus: 'Emag.',
+    gender: 'M',
     level: 'Sênior',
     status: 'Ok',
     medicalConditions: ['Rinite']
@@ -176,6 +190,7 @@ export const ATHLETE_LIST_MOCK: Athlete[] = [
     age: 22,
     weight: 79,
     height: 180,
+    gender: 'F',
     focus: 'Emag.',
     level: 'Júnior',
     status: 'Ok',

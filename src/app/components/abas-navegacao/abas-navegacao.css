@@ -1,0 +1,64 @@
+
+.abas-container {
+  width: 100%;
+  max-width: 350px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza botões e pontos */
+  gap: 0.75rem; /* Espaço entre a fileira de botões e os pontos */
+  margin-bottom: 1.5rem; /* Espaço abaixo das abas */
+}
+
+.abas-lista {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem; /* Espaço entre os botões */
+  width: 100%;
+}
+
+.aba-botao {
+  flex-grow: 1; /* Faz os botões ocuparem o espaço disponível */
+  font-family: roboto;
+  border: none;
+  border-radius: 9999px; /* Formato de pílula */
+  padding: 0.6rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  
+  /* Cor Inativa (Roxo) */
+  background-color: var(--cor-apto, #8A4DC2); 
+}
+
+.aba-botao.ativo {
+  /* Cor Ativa (Preto) */
+  background-color: var(--cor-fundo-card, #25252D); 
+  color: white;
+}
+
+/* Paginação (Pontos) */
+.abas-paginacao {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem; /* Espaço entre os pontos */
+}
+
+.ponto-paginacao {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  
+  /* Cor Inativa (Roxo bem claro) */
+  background-color: var(--cor-lesionado, #dcc8ed);
+}
+
+.ponto-paginacao.ativo {
+  /* Cor Ativa (Roxo principal) */
+  background-color: var(--cor-apto, #8A4DC2);
+}

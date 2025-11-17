@@ -1,0 +1,88 @@
+<div id = "mainArea">
+    <div class="graphArea">
+        <div class="radarGraphArea">
+            <p-chart
+                type="radar"
+                [data]="radarData"
+                [options]="radarOptions">
+            </p-chart>
+        </div>
+        <div class="doughnutArea">
+
+            <!-- HIDRATAÇÃO -->
+            <div class="doughnutWrapper">
+                <div class="doughnutTitle">Hidratação</div>
+                <div class="doughnutContainer">
+                    <p-chart 
+                        type="doughnut"
+                        [data]="hydrationData"
+                        [options]="doughnutOptions">
+                    </p-chart>
+
+                    <div class="doughnutCenterText">
+                        {{ Atleta.dailyStatus?.hydration }}%
+                    </div>
+                </div>
+            </div>
+
+            <!-- FADIGA MUSCULAR -->
+            <div class="doughnutWrapper">
+                <div class="doughnutTitle">Fadiga</div>
+                <div class="doughnutContainer">
+                    <p-chart 
+                        type="doughnut"
+                        [data]="fatigueData"
+                        [options]="doughnutOptions">
+                    </p-chart>
+
+                    <div class="doughnutCenterText">
+                        {{ Atleta.dailyStatus?.muscleFatigue }}%
+                    </div>
+                </div>
+            </div>
+
+            <!-- SONO -->
+            <div class="doughnutWrapper">
+                <div class="doughnutTitle">Sono</div>
+                <div class="doughnutContainer">
+                    <p-chart 
+                        type="doughnut"
+                        [data]="sleepData"
+                        [options]="doughnutOptions">
+                    </p-chart>
+
+                    <div class="doughnutCenterText">
+                        {{ Atleta.dailyStatus?.sleep }}%
+                    </div>
+                </div>
+            </div>
+        </div>   
+    </div>
+    <div class = "InfoArea"> 
+        <div class = "InfoCard">
+            <div class="InfoCardTop">
+                <p class="InfoCardTitle">Peso</p>
+            </div>
+            <div class="InfoCardBottom">
+                <p class="InfoContent">{{Atleta.bodyComposition?.weight}}Kg</p>
+            </div>
+        </div>
+        <div class = "InfoCard">
+            <div class="InfoCardTop">
+                <p class="InfoCardTitle">Gordura</p>
+            </div>
+            <div class="InfoCardBottom">
+                <p class="InfoContent">{{Atleta.bodyComposition?.fat}}%</p>
+            </div>
+        </div>
+         <div class = "InfoCard">
+            <div class="InfoCardTop">
+                <p class="InfoCardTitle">Músculo</p>
+            </div>
+            <div class="InfoCardBottom">
+                <p class="InfoContent">{{Atleta.bodyComposition?.muscle}}%</p>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -29,6 +29,13 @@
 .nav-item:hover {
   background-color: #3d3d4e;
 }
+.nav-item.active {
+  background-color: #4CAF50;
+  font-weight: 600;
+}
+.nav-item.active:hover {
+  background-color: #45a049;
+}
 .nav-item i {
   color: #FAFAFA;
   font-size: 20px;

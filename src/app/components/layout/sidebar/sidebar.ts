@@ -1,10 +1,10 @@
 import { Component, Input, HostBinding } from '@angular/core';
-import { CommonModule } from '@angular/common'; 
-// REMOVEMOS o MatListModule
+import { CommonModule } from '@angular/common';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
-  imports: [CommonModule], // <-- MatListModule FOI REMOVIDO DAQUI
+  imports: [CommonModule, RouterLink, RouterLinkActive],
   templateUrl: './sidebar.html',
   styleUrl: './sidebar.css',
 })
@@ -16,9 +16,9 @@ export class Sidebar {
   }
 
   navItems = [
-    { icon: 'fa-solid fa-house', label: 'Home' },
-    { icon: 'fa-solid fa-user', label: 'Perfil' },
-    { icon: 'fa-solid fa-clipboard', label: 'Atletas' },
-    { icon: 'fa-solid fa-gear', label: 'Configurações' }
+    { icon: 'fa-solid fa-house', label: 'Home', route: '/home' },
+    { icon: 'fa-solid fa-user', label: 'Perfil', route: '/perfil' },
+    { icon: 'fa-solid fa-clipboard', label: 'Atletas', route: '/atletas' },
+    { icon: 'fa-solid fa-gear', label: 'Configurações', route: '/configuracoes' }
   ];
 }
