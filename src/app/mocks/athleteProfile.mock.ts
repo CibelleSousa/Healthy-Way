@@ -5,7 +5,7 @@ export const ATHLETE_PROFILE_MOCK: Athlete = {
   // Informações Básicas
   id: 1,
   name: 'Lebron James',
-  photoUrl: 'https://img.favpng.com/1/5/25/lebron-james-nba-2k14-nba-2k13-the-nba-finals-png-favpng-BSFJDRxjZy38PFLBAcVbwsN3f.jpg',
+  photoUrl: 'LebronProfile.png',
   age: 35,
   weight: 95,
   height: 206, // cm
