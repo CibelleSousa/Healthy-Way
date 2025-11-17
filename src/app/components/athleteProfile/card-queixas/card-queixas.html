@@ -1,0 +1,27 @@
+<div class="historico-container">
+  
+  <div class="historico-header">
+    <h2 class="historico-titulo">HISTÓRICO DE QUEIXAS</h2>
+  </div>
+
+  <div class="historico-lista-header">
+    <div class="col col-data">DATA</div>
+    <div class="col col-queixa">QUEIXA</div>
+    <div class="col col-status">STATUS</div>
+  </div>
+
+  <div class="historico-lista-body">
+    
+    <div class="historico-lista-item" *ngFor="let q of queixas">
+      
+      <div class="col col-data">{{ q.data }}</div>
+      <div class="col col-queixa">{{ q.texto }}</div>
+      <div class="col col-status">
+        <span class="status" [ngClass]="q.status">
+          {{ getStatus(q.status) }}
+        </span>
+      </div>
+    </div>
+
+  </div>
+</div>
