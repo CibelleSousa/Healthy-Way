@@ -1,1 +1,27 @@
-<p>athlete-profile works!</p>
+<div id="MainArea">
+        <div id="MainProfileArea">
+            <app-info></app-info>
+            <div id="PhotoNav"></div>
+            <img src="{{atleta.photoUrl}}" id="ProfilePic">
+            <app-stats></app-stats>
+        </div>
+    <app-abas-navegacao id="NavAdjust"></app-abas-navegacao>
+</div>
+<div id="SpecificArea">
+    <div id="ColumnOne">
+        <app-card-queixas></app-card-queixas>
+        <div id="ArterialPressurePlaceHolder"><p>APP</p></div>
+        <div id="LabExamensPlaceholder"><p>LEP</p></div>
+    </div>
+    <div id="ColumnTwo">
+        <div id="HealthIndicatorsPlaceholder"><p>HIP</p></div>
+        <app-card-calorias></app-card-calorias>
+        <div id="BottomColumnTwo">
+            <div id="HormonalLevelPlaceholder"><p>HLP</p></div>
+            <div id="ColumnBottomColumnTwo">
+                <app-card-disponibilidade></app-card-disponibilidade>
+                <div id="TestLevelPlaceholder"><p>TLP</p></div>
+            </div>
+        </div>
+    </div>
+</div>

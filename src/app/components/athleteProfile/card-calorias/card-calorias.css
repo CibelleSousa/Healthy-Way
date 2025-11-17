@@ -1,6 +1,6 @@
 .card-root {
-  width: 1044px;
-  height: 537px;
+  width: 650px;
+  aspect-ratio: 1044/650;
   background: #25252D;
   border-radius: 12px;
   padding: 20px 24px;

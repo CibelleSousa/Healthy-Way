@@ -1,0 +1,148 @@
+#MainArea{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 37px;
+}
+#MainProfileArea{
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-evenly;
+    justify-self: center;
+    align-self: center;
+    width: 100%;
+    margin-left: 25px;
+}
+#ProfilePic{
+    width: 350px;
+    height: 350px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border: solid 2px;
+    border-radius: 100%;
+}
+#PhotoNav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+#NavAdjust{
+    align-self: center;
+    margin-right: 150px;
+}
+#ArterialPressurePlaceHolder{
+align-content: center;
+justify-content: center;
+width: 611.165px;
+height: 491.329px;
+aspect-ratio: 611.16/491.33;
+border-radius: 20px;
+background: #25252D;
+box-shadow: 0 2px 6px 0 rgba(13, 10, 44, 0.08);
+p{
+    color: white;
+    font-family: roboto;
+    font-weight: 800;
+    font-size: 60px;
+    text-align: center;
+}
+}
+#LabExamensPlaceholder{
+    align-content: center;
+    justify-content: center;
+    width: 611.165px;
+    height: 531px;
+    border-radius: 20px;
+    background: #25252D;
+    box-shadow: 0 2px 6px 0 rgba(13, 10, 44, 0.08);
+    p{
+        color: white;
+        font-family: roboto;
+        font-weight: 800;
+        font-size: 60px;
+        text-align: center;
+    }
+}
+#SpecificArea{
+    display: inline-flex;
+    margin-left: 75px;
+    gap: 30px;
+}
+#ColumnOne{
+    display: flex;
+    width: 611.165px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 36px;
+}
+#ColumnTwo{
+    display: flex;
+    width: fit-content;
+    flex-direction: column;
+    align-items: flex-start;
+    align-content: start;
+    gap: 29px;
+}
+#HealthIndicatorsPlaceholder{
+    align-content: center;
+    justify-content: center;
+    width: 650px;
+    aspect-ratio: 1044/650;
+    border-radius: 20px;
+    background: #25252D;
+    box-shadow: 0 2px 6px 0 rgba(13, 10, 44, 0.08);
+    p{
+        color: white;
+        font-family: roboto;
+        font-weight: 800;
+        font-size: 60px;
+        text-align: center;
+    }
+}
+#HormonalLevelPlaceholder{
+    align-content: center;
+    justify-content: center;
+    width: 236px;
+    aspect-ratio: 460/1000;
+    border-radius: 20px;
+    background: #25252D;
+    box-shadow: 0 2px 6px 0 rgba(13, 10, 44, 0.08);
+    p{
+        color: white;
+        font-family: roboto;
+        font-weight: 800;
+        font-size: 60px;
+        text-align: center;
+    }
+}
+#BottomColumnTwo{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    align-self: stretch;
+}
+#TestLevelPlaceholder{
+    align-content: center;
+    justify-content: center;
+    width: 400px;
+    aspect-ratio: 460/280;
+    border-radius: 20px;
+    background: #25252D;
+    box-shadow: 0 2px 6px 0 rgba(13, 10, 44, 0.08);
+    p{
+        color: white;
+        font-family: roboto;
+        font-weight: 800;
+        font-size: 60px;
+        text-align: center;
+}
+}
+#ColumnBottomColumnTwo{
+    display: flex;
+    width:fit-content;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
