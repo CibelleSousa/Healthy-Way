@@ -1,0 +1,97 @@
+.card-root {
+  width: 1044px;
+  height: 537px;
+  background: #25252D;
+  border-radius: 12px;
+  padding: 20px 24px;
+  box-sizing: border-box;
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  overflow: hidden;
+}
+
+/* header */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.actions {
+  position: relative;
+}
+
+.filter-btn {
+  background: #F8F8FF;
+  color: #000;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.filter-pop {
+  position: absolute;
+  right: 0;
+  top: 42px;
+  background: #333;
+  border-radius: 8px;
+  min-width: 160px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+  z-index: 50;
+}
+
+.filter-item {
+  padding: 10px 12px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.filter-item:hover {
+  background: #444;
+}
+
+/* divider */
+.divider {
+  height: 1px;
+  background: #E5E5EF;
+  margin: 16px 0;
+}
+
+/* chart container */
+.chart-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chart-surface {
+  background: #25252D;
+  width: 960px;
+  height: 420px;
+  border-radius: 8px;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+/* força o canvas a ocupar tudo */
+.chart-surface ::ng-deep canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+/* tooltip customizado */
+.custom-tooltip {
+  font-family: Roboto, sans-serif;
+  font-size: 13px;
+  color: #000;
+}

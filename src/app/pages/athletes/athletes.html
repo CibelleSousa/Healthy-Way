@@ -1,0 +1,6 @@
+<div class="page-container">
+    <div class="search-wrapper">
+        <app-search-bar (search) = "onSearch($event)"></app-search-bar>
+    </div>
+    <app-card-list [athletes] = "filteredAthletes"></app-card-list>
+</div>

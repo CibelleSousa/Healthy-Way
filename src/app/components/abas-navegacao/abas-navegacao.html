@@ -1,0 +1,26 @@
+<nav class="abas-container">
+  
+  <div class="abas-lista">
+    @for (aba of abas(); track aba) {
+      <button 
+        type="button" 
+        class="aba-botao"
+        [class.ativo]="aba === abaAtiva()"
+        (click)="selecionarAba(aba)">
+        {{ aba }}
+      </button>
+    }
+  </div>
+
+  <div class="abas-paginacao">
+    @for (aba of abas(); track aba) {
+      <button 
+        type="button" 
+        aria-label="Ir para aba {{ aba }}"
+        class="ponto-paginacao"
+        [class.ativo]="aba === abaAtiva()"
+        (click)="selecionarAba(aba)">
+      </button>
+    }
+  </div>
+</nav>

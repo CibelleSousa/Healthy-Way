@@ -1,0 +1,28 @@
+<div class="card-root">
+  <div class="card-header">
+    <div class="title">INGESTÃO CALÓRICA MÉDIA</div>
+
+    <div class="actions">
+      <button class="filter-btn" (click)="toggleFilterMenu()">Filtrar ▾</button>
+
+      <div class="filter-pop" *ngIf="filterOpen">
+        <div class="filter-item" (click)="applyFilter('6m')">Último Semestre</div>
+        <div class="filter-item" (click)="applyFilter('12m')">Último Ano</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="chart-area">
+    <div class="chart-surface">
+      <p-chart
+        type="bar"
+        [data]="chartData"
+        [options]="chartOptions"
+        width="960"
+        height="420">
+      </p-chart>
+    </div>
+  </div>
+</div>

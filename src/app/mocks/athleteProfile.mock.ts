@@ -5,12 +5,13 @@ export const ATHLETE_PROFILE_MOCK: Athlete = {
   // Informações Básicas
   id: 1,
   name: 'Lebron James',
-  photoUrl: 'https://img.favpng.com/1/5/25/lebron-james-nba-2k14-nba-2k13-the-nba-finals-png-favpng-BSFJDRxjZy38PFLBAcVbwsN3f.jpg',
+  photoUrl: 'LebronProfile.png',
   age: 35,
   weight: 95,
   height: 206, // cm
   focus: 'Força',
   level: 'Sênior',
+  gender: 'M',
   status: 'Ok',
   medicalConditions: [
     'Bronquite Asmática',
@@ -51,9 +52,9 @@ export const ATHLETE_PROFILE_MOCK: Athlete = {
     testosterone: { value: 800, status: 'Muito Bom' }
   },
   availabilityLast30Days: {
-    fitPercentage: 75,
-    fitDays: 24,
-    restrictedDays: 3,
+    fitPercentage: 70,
+    fitDays: 21,
+    restrictedDays: 4,
     injuredDays: 5
   }
 };

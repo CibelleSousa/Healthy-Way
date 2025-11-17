@@ -4,11 +4,12 @@ export const ATHLETE_LIST_MOCK: Athlete[] = [
   {
     id: 1,
     name: 'Lebron James',
-    photoUrl: 'https://img.favpng.com/1/5/25/lebron-james-nba-2k14-nba-2k13-the-nba-finals-png-favpng-BSFJDRxjZy38PFLBAcVbwsN3f.jpg',
+    photoUrl: 'LebronProfile.png',
     age: 35,
     weight: 95,
     height: 206,
     focus: 'Força',
+    gender: 'M',
     level: 'Sênior', 
     status: 'Ok',
     medicalConditions: ['Bronquite Asmática']
@@ -16,11 +17,12 @@ export const ATHLETE_LIST_MOCK: Athlete[] = [
   {
     id: 2,
     name: 'Marta Vieira da Silva',
-    photoUrl: 'https://palestrasdesucesso.com.br/?attachment_id=14423',
+    photoUrl: 'MartaProfile.png',
     age: 38,
     weight: 60,
     height: 163,
     focus: 'Força',
+    gender: 'F',
     level: 'Sênior', 
     status: 'Ok', 
     medicalConditions: [] 
@@ -28,11 +30,12 @@ export const ATHLETE_LIST_MOCK: Athlete[] = [
   {
     id: 3,
     name: 'Stephen Curry',
-    photoUrl: 'https://img.favpng.com/7/21/9/stephen-curry-golden-state-warriors-2014-nba-all-star-game-png-favpng-16ZYCfY6x51pf5iGX3QY81akp.jpg',
+    photoUrl: 'StephenProfile.png',
     age: 37,
     weight: 84,
     height: 188,
     focus: 'Força',
+    gender: 'M',
     level: 'Sênior', 
     status: 'Lesionado', 
     medicalConditions: []
@@ -40,11 +43,12 @@ export const ATHLETE_LIST_MOCK: Athlete[] = [
   {
     id: 4,
     name: 'Russell Westbrook',
-    photoUrl: 'https://img.favpng.com/9/24/19/russell-westbrook-oklahoma-city-thunder-nba-basketball-slam-dunk-png-favpng-0BL7TfnXJyEtSwWwWEbsu0pjv.jpg',
+    photoUrl: 'WestbrookProfile.png',
     age: 37,
     weight: 91,
     height: 193,
     focus: 'Força',
+    gender: 'M',
     level: 'Sênior', 
     status: 'Ok', 
     medicalConditions: []
@@ -52,11 +56,12 @@ export const ATHLETE_LIST_MOCK: Athlete[] = [
   {
     id: 5,
     name: 'Luka Dončić',
-    photoUrl: 'https://img.favpng.com/18/18/24/basketball-cartoon-png-favpng-uLReujeU0nwVnmtNM9YmMXvcv.jpg',
+    photoUrl: 'LukaProfile.png',
     age: 26,
     weight: 104,
     height: 201,
     focus: 'Recu.',
+    gender: 'M',
     level: 'Júnior', 
     status: 'Restringido', 
     medicalConditions: []
@@ -64,11 +69,12 @@ export const ATHLETE_LIST_MOCK: Athlete[] = [
   {
     id: 6,
     name: 'Nikola Jokić',
-    photoUrl: 'https://img.favpng.com/25/18/12/nikola-jokic-basketball-player-png-favpng-w9jU5ux2zmi278kgrjaC2sZby.jpg',
+    photoUrl: 'NikolaProfile.png',
     age: 30,
     weight: 129,
     height: 211,
     focus: 'Recu.',
+    gender: 'M',
     level: 'Sênior', 
     status: 'Ok', 
     medicalConditions: []
@@ -76,11 +82,12 @@ export const ATHLETE_LIST_MOCK: Athlete[] = [
   {
     id: 7,
     name: 'Ana Clara Souza',
-    photoUrl: 'https://palestrasdesucesso.com.br/?attachment_id=14423',
+    photoUrl: 'MartaProfile.png',
     age: 24,
     weight: 58,
     height: 165,
     focus: 'Recu.',
+    gender: 'F',
     level: 'Júnior',
     status: 'Ok',
     medicalConditions: []
@@ -88,11 +95,12 @@ export const ATHLETE_LIST_MOCK: Athlete[] = [
   {
     id: 8,
     name: 'Bruno Alves',
-    photoUrl: 'https://img.favpng.com/18/18/24/basketball-cartoon-png-favpng-uLReujeU0nwVnmtNM9YmMXvcv.jpg',
+    photoUrl: 'StephenProfile.png',
     age: 29,
     weight: 82,
     height: 185,
     focus: 'Recu.',
+    gender: 'M',
     level: 'Sênior',
     status: 'Restringido',
     medicalConditions: ['Asma leve']
@@ -100,11 +108,12 @@ export const ATHLETE_LIST_MOCK: Athlete[] = [
   {
     id: 9,
     name: 'Carlos Eduardo Lima',
-    photoUrl: 'https://img.favpng.com/18/18/24/basketball-cartoon-png-favpng-uLReujeU0nwVnmtNM9YmMXvcv.jpg',
+    photoUrl: 'LebronProfile.png',
     age: 27,
     weight: 125,
     height: 208,
     focus: 'Recu.',
+    gender: 'M',
     level: 'Sênior',
     status: 'Ok',
     medicalConditions: []
@@ -112,11 +121,12 @@ export const ATHLETE_LIST_MOCK: Athlete[] = [
   {
     id: 10,
     name: 'Daniela Ribeiro',
-    photoUrl: 'https://palestrasdesucesso.com.br/?attachment_id=14423',
+    photoUrl: 'MartaProfile.png',
     age: 31,
     weight: 62,
     height: 170,
     focus: 'Emag.',
+    gender: 'F',
     level: 'Sênior',
     status: 'Lesionado',
     medicalConditions: ['Torção no tornozelo']
@@ -124,11 +134,12 @@ export const ATHLETE_LIST_MOCK: Athlete[] = [
   {
     id: 11,
     name: 'Felipe Costa',
-    photoUrl: 'https://img.favpng.com/18/18/24/basketball-cartoon-png-favpng-uLReujeU0nwVnmtNM9YmMXvcv.jpg',
+    photoUrl: 'NikolaProfile.png',
     age: 25,
     weight: 90,
     height: 190,
     focus: 'Emag.',
+    gender: 'M',
     level: 'Júnior',
     status: 'Ok',
     medicalConditions: []
@@ -136,11 +147,12 @@ export const ATHLETE_LIST_MOCK: Athlete[] = [
   {
     id: 12,
     name: 'Gabriel Martins',
-    photoUrl: 'https://img.favpng.com/18/18/24/basketball-cartoon-png-favpng-uLReujeU0nwVnmtNM9YmMXvcv.jpg',
+    photoUrl: 'WestbrookProfile.png',
     age: 23,
     weight: 100,
     height: 198,
     focus: 'Emag.',
+    gender: 'M',
     level: 'Júnior',
     status: 'Ok',
     medicalConditions: []
@@ -148,11 +160,12 @@ export const ATHLETE_LIST_MOCK: Athlete[] = [
   {
     id: 13,
     name: 'Helena Oliveira',
-    photoUrl: 'https://palestrasdesucesso.com.br/?attachment_id=14423',
+    photoUrl: 'MartaProfile.png',
     age: 28,
     weight: 65,
     height: 175,
     focus: 'Emag.',
+    gender: 'F',
     level: 'Sênior',
     status: 'Restringido',
     medicalConditions: []
@@ -160,11 +173,12 @@ export const ATHLETE_LIST_MOCK: Athlete[] = [
   {
     id: 14,
     name: 'Lucas Pereira',
-    photoUrl: 'https://img.favpng.com/18/18/24/basketball-cartoon-png-favpng-uLReujeU0nwVnmtNM9YmMXvcv.jpg',
+    photoUrl: 'WestbrookProfile.png',
     age: 33,
     weight: 98,
     height: 202,
     focus: 'Emag.',
+    gender: 'M',
     level: 'Sênior',
     status: 'Ok',
     medicalConditions: ['Rinite']
@@ -172,10 +186,11 @@ export const ATHLETE_LIST_MOCK: Athlete[] = [
   {
     id: 15,
     name: 'Rafael Mendes',
-    photoUrl: 'https://img.favpng.com/18/18/24/basketball-cartoon-png-favpng-uLReujeU0nwVnmtNM9YmMXvcv.jpg',
+    photoUrl: 'LebronProfile.png',
     age: 22,
     weight: 79,
     height: 180,
+    gender: 'F',
     focus: 'Emag.',
     level: 'Júnior',
     status: 'Ok',

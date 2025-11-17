@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import Athlete from "../core/models/athlete.model";
-import { ATHLETE_PROFILE_MOCK } from '../mocks/athleteProfile.mock';
+import { Component, Input} from '@angular/core';
+import Athlete from '../../../core/models/athlete.model';
+import { ATHLETE_PROFILE_MOCK } from '../../../mocks/athleteProfile.mock';
 
 @Component({
   selector: 'app-card-atleta',
@@ -10,6 +10,4 @@ import { ATHLETE_PROFILE_MOCK } from '../mocks/athleteProfile.mock';
 })
 export class CardAtleta {
   @Input() Atleta: Athlete = ATHLETE_PROFILE_MOCK;
-  ngOnInit(): void{
-  }
 }

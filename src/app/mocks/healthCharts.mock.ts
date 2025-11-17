@@ -27,6 +27,12 @@ const mockCaloricData: CaloricIntakeDataPoint[] = [
   { month: 'ABR', protein: 1800, carbs: 1200, fats: 600, total: 3600 },
   { month: 'MAI', protein: 1900, carbs: 1300, fats: 650, total: 3850 },
   { month: 'JUN', protein: 1600, carbs: 1100, fats: 550, total: 3250 },
+  { month: 'JUL', protein: 1700, carbs: 1150, fats: 580, total: 3430 },
+  { month: 'AGO', protein: 1750, carbs: 1180, fats: 600, total: 3530 },
+  { month: 'SET', protein: 1650, carbs: 1120, fats: 560, total: 3330 },
+  { month: 'OUT', protein: 1800, carbs: 1250, fats: 610, total: 3660 },
+  { month: 'NOV', protein: 1850, carbs: 1280, fats: 630, total: 3760 },
+  { month: 'DEZ', protein: 1950, carbs: 1350, fats: 680, total: 3980 }
 ];
 
 const mockComplaints: Complaint[] = [
