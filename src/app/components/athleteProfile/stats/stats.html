@@ -1,11 +1,62 @@
 <div id = "mainArea">
     <div class="graphArea">
         <div class="radarGraphArea">
-
+            <p-chart
+                type="radar"
+                [data]="radarData"
+                [options]="radarOptions">
+            </p-chart>
         </div>
         <div class="doughnutArea">
 
-        </div>
+            <!-- HIDRATAÇÃO -->
+            <div class="doughnutWrapper">
+                <div class="doughnutTitle">Hidratação</div>
+                <div class="doughnutContainer">
+                    <p-chart 
+                        type="doughnut"
+                        [data]="hydrationData"
+                        [options]="doughnutOptions">
+                    </p-chart>
+
+                    <div class="doughnutCenterText">
+                        {{ Atleta.dailyStatus?.hydration }}%
+                    </div>
+                </div>
+            </div>
+
+            <!-- FADIGA MUSCULAR -->
+            <div class="doughnutWrapper">
+                <div class="doughnutTitle">Fadiga</div>
+                <div class="doughnutContainer">
+                    <p-chart 
+                        type="doughnut"
+                        [data]="fatigueData"
+                        [options]="doughnutOptions">
+                    </p-chart>
+
+                    <div class="doughnutCenterText">
+                        {{ Atleta.dailyStatus?.muscleFatigue }}%
+                    </div>
+                </div>
+            </div>
+
+            <!-- SONO -->
+            <div class="doughnutWrapper">
+                <div class="doughnutTitle">Sono</div>
+                <div class="doughnutContainer">
+                    <p-chart 
+                        type="doughnut"
+                        [data]="sleepData"
+                        [options]="doughnutOptions">
+                    </p-chart>
+
+                    <div class="doughnutCenterText">
+                        {{ Atleta.dailyStatus?.sleep }}%
+                    </div>
+                </div>
+            </div>
+        </div>   
     </div>
     <div class = "InfoArea"> 
         <div class = "InfoCard">
