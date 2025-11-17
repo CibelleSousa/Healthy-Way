@@ -4,7 +4,7 @@
     height: 471px;
     padding: 48px 28px;
     align-items: center;
-    gap: 10px;
+    gap: 29px;
     flex-shrink: 0;
     border-radius: 20px;
     background: #25252D;
@@ -14,12 +14,13 @@
     width: 340px;
     flex-direction: column;
     align-items: center;
-    gap: 21px;
+    gap: 60px;
 }
 .radarGraphArea{
     width: 317px;
     height: 232px;
     flex-shrink: 0;
+    margin-top: -50px;
 }
 .doughnutArea{
     width: 340px;
@@ -77,4 +78,58 @@
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+}
+
+.doughnutArea {
+    width: 340px;
+    display: flex;
+    justify-content: space-between; /* deixa os 3 donuts alinhados */
+    align-items: flex-start;
+}
+
+
+.doughnutWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px;
+    height: 140px; /* 100 para o gráfico + 40 para o título */
+}
+
+.doughnutTitle {
+    color: #E0C6FD;
+    font-family: Roboto;
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.doughnutContainer {
+    width: 100px;
+    height: 100px;
+    position: relative;
+}
+
+.doughnutContainer ::ng-deep canvas {
+    width: 100px !important;
+    height: 100px !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    display: block !important;
+    position: static !important;
+}
+
+
+.doughnutCenterText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    color: white;
+    pointer-events: none;
+    font-family: Roboto;
+    font-weight: bold;
+    color: #E0C6FD;
+    font-size: 24px;
 }
