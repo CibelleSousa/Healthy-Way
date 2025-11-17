@@ -7,6 +7,9 @@
 
   <mat-sidenav-content>
     <div class="app-content" [class.blurred]="isSidebarExpanded">
+      <div class="search-bar-wrapper">
+        <app-search-bar></app-search-bar>
+      </div>
       <router-outlet></router-outlet>
     </div>
   </mat-sidenav-content>

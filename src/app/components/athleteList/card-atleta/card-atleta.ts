@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import Athlete from "../core/models/athlete.model";
-import { ATHLETE_PROFILE_MOCK } from '../mocks/athleteProfile.mock';
+import Athlete from '../../../core/models/athlete.model';
+import { ATHLETE_PROFILE_MOCK } from '../../../mocks/athleteProfile.mock';
 
 @Component({
   selector: 'app-card-atleta',

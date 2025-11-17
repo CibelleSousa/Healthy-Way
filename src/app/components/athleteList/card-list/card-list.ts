@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CardAtleta } from '../../../card-atleta/card-atleta';
+import { CardAtleta } from '../card-atleta/card-atleta';
 import { ATHLETE_LIST_MOCK } from '../../../mocks/athleteList.mock';
 
 @Component({
