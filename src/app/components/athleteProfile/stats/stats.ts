@@ -75,10 +75,10 @@ export class Stats implements OnInit {
           min: 0,
           max: 100,
           grid: {
-            color: '#444', 
+            color: '#959090ff', 
           },
           angleLines: {
-            color: '#444',
+            color: '#959090ff',
           },
           ticks: {
             display: false
