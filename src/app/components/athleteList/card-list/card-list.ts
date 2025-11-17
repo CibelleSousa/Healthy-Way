@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { CardAtleta } from '../../../card-atleta/card-atleta';
+import { Component, Input } from '@angular/core';
+import { CardAtleta } from '../card-atleta/card-atleta';
+import Athlete from '../../../core/models/athlete.model';
 import { ATHLETE_LIST_MOCK } from '../../../mocks/athleteList.mock';
 
 @Component({
@@ -9,5 +10,5 @@ import { ATHLETE_LIST_MOCK } from '../../../mocks/athleteList.mock';
   styleUrl: './card-list.css',
 })
 export class CardList {
-  athlete = ATHLETE_LIST_MOCK;
+    @Input() athletes: Athlete[] = [];
 }

@@ -1,5 +1,10 @@
 <div id="AthleteCard">
-@for (item of athlete; track $index) {
+@for (item of athletes; track item.id) {
     <app-card-atleta [Atleta]="item"></app-card-atleta>
 }
+@if (athletes.length === 0) {
+        <p style="width: 100%; text-align: center; color: #666; margin-top: 20px;">
+            Nenhum atleta encontrado.
+        </p>
+    }
 </div>

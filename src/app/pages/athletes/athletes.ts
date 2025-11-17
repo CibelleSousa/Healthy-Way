@@ -1,21 +1,28 @@
-import { Component, signal } from '@angular/core';
-import { Header } from '../../components/layout/header/header';
-import { Sidebar } from '../../components/layout/sidebar/sidebar';
-import { RouterOutlet } from '@angular/router';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { CommonModule } from '@angular/common';
-import { CardList } from "../../components/athleteList/card-list/card-list";
-import { CardQueixas } from "../../components/athleteProfile/card-queixas/card-queixas";
+import { Component, OnInit } from '@angular/core';
+import { SearchBar } from '../../components/general/search-bar/search-bar'; 
+import { CardList } from '../../components/athleteList/card-list/card-list';
+import { ATHLETE_LIST_MOCK } from '../../mocks/athleteList.mock';
+import Athlete from '../../core/models/athlete.model';
 
 @Component({
   selector: 'app-athletes',
-  imports: [Header, Sidebar, MatSidenavModule, CardList, RouterOutlet, CardQueixas],
+  imports: [SearchBar, CardList],
   templateUrl: './athletes.html',
   styleUrl: './athletes.css',
 })
 export class Athletes {
-    public isSidebarExpanded = false;
-    toggleSidebar() {
-    this.isSidebarExpanded = !this.isSidebarExpanded;
+
+  private allAthletes: Athlete[] = ATHLETE_LIST_MOCK;
+
+  public filteredAthletes: Athlete[] = [];
+
+  ngOnInit(): void {
+    // Começa exibindo tudo
+    this.filteredAthletes = this.allAthletes;
+  }
+
+  public onSearch(query: string): void {
+    const term = query.toLowerCase().trim();
+    this.filteredAthletes = this.allAthletes.filter(a => a.name.toLowerCase().includes(term))
   }
 }

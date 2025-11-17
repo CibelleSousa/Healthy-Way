@@ -1,7 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { CardAtleta } from './card-atleta/card-atleta';
 import { Header } from './components/layout/header/header';
 import { Sidebar } from './components/layout/sidebar/sidebar';
 import { CommonModule } from '@angular/common';
@@ -12,10 +11,12 @@ import { CardDisponibilidade } from "./components/athleteProfile/card-disponibil
 import { CardCalorias } from './components/athleteProfile/card-calorias/card-calorias';
 import { CardQueixas } from './components/athleteProfile/card-queixas/card-queixas';
 import { Stats } from "./components/athleteProfile/stats/stats";
+import { CardAtleta } from './components/athleteList/card-atleta/card-atleta';
+import { SearchBar } from './components/general/search-bar/search-bar';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, CommonModule, MatSidenavModule, Header, Sidebar, CardAtleta, CardList, AbasNavegacaoComponent, Info, CardDisponibilidade, Stats, CardCalorias,CardQueixas],
+  imports: [RouterOutlet, CommonModule, MatSidenavModule, Header, Sidebar, CardAtleta, CardList, AbasNavegacaoComponent, Info, CardDisponibilidade, Stats, CardCalorias,CardQueixas, SearchBar],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

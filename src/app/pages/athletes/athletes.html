@@ -1,4 +1,6 @@
-<div class="app-content" [class.blurred]="isSidebarExpanded">
-    <app-card-list></app-card-list>
-      <router-outlet></router-outlet>
+<div class="page-container">
+    <div class="search-wrapper">
+        <app-search-bar (search) = "onSearch($event)"></app-search-bar>
+    </div>
+    <app-card-list [athletes] = "filteredAthletes"></app-card-list>
 </div>

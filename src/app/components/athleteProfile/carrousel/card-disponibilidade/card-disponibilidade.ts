@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ChartModule } from 'primeng/chart';
-import { ATHLETE_PROFILE_MOCK } from '../../../mocks/athleteProfile.mock';
+import { ATHLETE_PROFILE_MOCK } from '../../../../mocks/athleteProfile.mock';
 
 @Component({
   selector: 'app-card-disponibilidade',
