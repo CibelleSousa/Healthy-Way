@@ -120,9 +120,9 @@ export class CardCalorias implements OnInit {
 
             tooltipEl.innerHTML = `
               <div><strong>${chart.data.labels[index]}</strong></div>
-              <div>Proteína: ${p} kcal</div>
-              <div>Carboidratos: ${c} kcal</div>
               <div>Gorduras: ${g} kcal</div>
+              <div>Carboidratos: ${c} kcal</div>
+              <div>Proteína: ${p} kcal</div>
               <div style="margin-top:4px; font-weight:700">Total: ${total} kcal</div>
             `;
 
