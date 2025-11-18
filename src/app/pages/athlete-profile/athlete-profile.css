@@ -28,41 +28,75 @@
     align-items: center;
     gap: 50px;
 }
-#NavAdjust{
-    align-self: center;
-    margin-right: 150px;
-}
+
 #ArterialPressurePlaceHolder{
 align-content: center;
 justify-content: center;
 width: 611.165px;
-height: 491.329px;
-aspect-ratio: 611.16/491.33;
+height: fit-content;
+padding: 10px;
+padding-bottom: 20px;
 border-radius: 20px;
 background: #25252D;
 box-shadow: 0 2px 6px 0 rgba(13, 10, 44, 0.08);
+h1{
+    margin-left: 10px;
+    color: white;
+    font-size: 26px;
+    height: 1rem;
+    width: 100%;
+}
+h2{
+    height: 1rem;
+    margin-left: 10px;
+    color: white;
+    font-size: 16px;
+    font-weight: 300;
+}
 p{
     color: white;
     font-family: roboto;
-    font-weight: 800;
-    font-size: 60px;
-    text-align: center;
+    font-weight: 300;
+    font-size: 18px;
+    height: 1.5rem;
+    margin-left: 40px;
+    margin-bottom: 5px;
+    padding: 5px;
 }
 }
 #LabExamensPlaceholder{
+    display: flex;
+    padding: 15px;
+    flex-direction: column;
     align-content: center;
     justify-content: center;
+    align-items: center;
+    justify-items: center;
     width: 611.165px;
-    height: 531px;
+    height: fit-content;
     border-radius: 20px;
     background: #25252D;
     box-shadow: 0 2px 6px 0 rgba(13, 10, 44, 0.08);
+    .LEPEntry{
+        align-content: center;
+        display: inline-flex;
+        justify-content: space-evenly;
+        width: 500px;
+        height: 3rem;
+    }
+    h1{
+        color: white;
+        margin-left: 10px;
+        font-size: 40px;
+        text-align: center;
+    }
     p{
+        width: 290px;
         color: white;
         font-family: roboto;
-        font-weight: 800;
-        font-size: 60px;
-        text-align: center;
+        font-weight: 300;
+        font-size: 18px;
+        
     }
 }
 #SpecificArea{
@@ -87,34 +121,93 @@ p{
 }
 #HealthIndicatorsPlaceholder{
     align-content: center;
+    padding: 15px;
     justify-content: center;
     width: 650px;
-    aspect-ratio: 1044/650;
+    height: fit-content;
     border-radius: 20px;
     background: #25252D;
     box-shadow: 0 2px 6px 0 rgba(13, 10, 44, 0.08);
-    p{
+    h1{
         color: white;
+        font-size: 24px;
+        height: 1rem;
+        font-weight: 700;
+        margin-top: 5px;
+    }
+    h2{
+        height: 1rem;
+        color: white;
+        font-size: 20px;
+        font-weight: 500;
+    }
+    #HIPLine{
+        height: 1px;
+        color: white;
+        background: white;
+    }
+    p{
+        color: rgb(255, 255, 255);
         font-family: roboto;
-        font-weight: 800;
-        font-size: 60px;
-        text-align: center;
+        font-weight: 400;
+        font-size: 20px;
+        margin-left: 20px;
     }
 }
 #HormonalLevelPlaceholder{
+    display: flex;
+    flex-direction: column;
     align-content: center;
+    align-items: center;
     justify-content: center;
+    justify-items: center;
+    padding-top: 15px;
     width: 236px;
     aspect-ratio: 460/1000;
-    border-radius: 20px;
+    border-radius: 10px;
     background: #25252D;
     box-shadow: 0 2px 6px 0 rgba(13, 10, 44, 0.08);
+    h1{
+        text-align: center;
+        color: white;
+        font-size: 32px;
+        line-break: auto;
+        line-height: 2rem;
+        margin-bottom: 0px;
+    }
+    h2{
+        color: white;
+        text-align: center;
+        justify-content: center;
+        align-content: center;
+        font-family: roboto;
+        border-radius: 5px 5px 0 0;
+        width: 200px;
+        background: #962DFF;
+        height: 2rem;
+        font-size: 25px;
+        font-weight: 600;
+        margin-bottom: 0;
+    }
+    h3{
+        color: white;
+        font-weight: 300;
+        text-align: center;
+    }
     p{
+        background: #C893FD;
+        margin-top: 0;
+        width: 200px;
+        border-radius: 0 0 5px 5px;
+        height: 100px;
+        justify-content: center;
+        align-content: center;
         color: white;
         font-family: roboto;
         font-weight: 800;
-        font-size: 60px;
+        font-size: 36px;
         text-align: center;
+        margin-bottom: 10px;
     }
 }
 #BottomColumnTwo{
@@ -124,6 +217,8 @@ p{
     align-self: stretch;
 }
 #TestLevelPlaceholder{
+    display: flex;
+    flex-direction: column;
     align-content: center;
     justify-content: center;
     width: 400px;
@@ -131,13 +226,54 @@ p{
     border-radius: 20px;
     background: #25252D;
     box-shadow: 0 2px 6px 0 rgba(13, 10, 44, 0.08);
+    #infoBox{
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        gap: 5px;
+    }
+    h1{
+        text-align: center;
+        color: white;
+        font-size: 32px;
+        line-break: auto;
+        line-height: 2rem;
+        margin-bottom: 0px;
+    }
+    h2{
+        color: white;
+        text-align: center;
+        justify-content: center;
+        align-content: center;
+        font-family: roboto;
+        border-radius: 5px 5px 0 0;
+        width: 160px;
+        background: #962DFF;
+        height: 2rem;
+        font-size: 25px;
+        font-weight: 600;
+        margin-bottom: 0;
+    }
+    h3{
+        color: white;
+        font-weight: 300;
+        text-align: center;
+        margin-bottom: 0;
+    }
     p{
+        background: #C893FD;
+        margin-top: 0;
+        width: 160px;
+        border-radius: 0 0 5px 5px;
+        height: 100px;
+        justify-content: center;
+        align-content: center;
         color: white;
         font-family: roboto;
         font-weight: 800;
-        font-size: 60px;
+        font-size: 36px;
         text-align: center;
-}
+    }
 }
 #ColumnBottomColumnTwo{
     display: flex;
