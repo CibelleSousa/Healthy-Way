@@ -5,6 +5,9 @@
     align-items: center;
     gap: 37px;
 }
+#StatsConsulta{
+    gap: 0;
+}
 #MainProfileArea{
     display: inline-flex;
     align-items: center;

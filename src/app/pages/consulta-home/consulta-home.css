@@ -1,0 +1,103 @@
+/* Container principal */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /*gap: 30px;*/
+  /*padding: 40px 20px;*/
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Título */
+.home-container h2 {
+  color: #ffffff;
+  font-size: 36px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+/* Parágrafo */
+.home-container p {
+  color: #B0B0B0;
+  font-size: 18px;
+  margin: 0;
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+/* Botão Nova Consulta */
+button {
+  padding: 16px 40px;
+  background: linear-gradient(135deg, #7261A3 0%, #5d4f8a 100%);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(114, 97, 163, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(114, 97, 163, 0.4);
+  background: linear-gradient(135deg, #5d4f8a 0%, #7261A3 100%);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Card de estado vazio (opcional para futuro) */
+.empty-state {
+  background: linear-gradient(145deg, #1E1E1E 0%, #252525 100%);
+  padding: 60px 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  border: 1px solid #2A2A2A;
+  max-width: 600px;
+  width: 100%;
+}
+
+/* Animação de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .home-container h2 {
+    font-size: 28px;
+  }
+
+  .home-container p {
+    font-size: 16px;
+  }
+
+  button {
+    padding: 14px 32px;
+    font-size: 15px;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .empty-state {
+    padding: 40px 24px;
+  }
+}
+   

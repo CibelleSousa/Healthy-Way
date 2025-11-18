@@ -1,0 +1,126 @@
+<div class="page-container">
+
+  <!-- Cabeçalho da página -->
+  <div class="page-header">
+    <h1 class="page-title">Nova Consulta</h1>
+    <p class="page-subtitle">Preencha os dados da consulta do atleta</p>
+  </div>
+
+  <!-- Formulário -->
+  <div class="form-container">
+    <form [formGroup]="consultaForm" class="form-full">
+  
+      <!-- 1. Identificação -->
+      <section formGroupName="identificacao">
+        <h3>1 — Identificação da Consulta</h3>
+
+        <label>Data da Consulta
+          <input type="date" formControlName="dataConsulta">
+        </label>
+
+        <label>Profissional Responsável
+          <select formControlName="profissional">
+            <option value="">Selecione um profissional</option>
+            <option *ngFor="let prof of profissionais" [value]="prof">{{ prof }}</option>
+          </select>
+        </label>
+
+        <label>Especialidade
+          <input type="text" formControlName="especialidade">
+        </label>
+
+        <label>Tipo de Consulta
+          <select formControlName="tipoConsulta">
+            <option value="">Selecione</option>
+            <option>Avaliação inicial</option>
+            <option>Retorno</option>
+            <option>Reabilitação</option>
+            <option>Outro</option>
+          </select>
+        </label>
+      </section>
+  
+      <!-- 2. Motivo da consulta -->
+      <section formGroupName="motivoConsulta">
+        <h3>2 — Motivo da Consulta</h3>
+
+        <label>Queixa principal
+          <input type="text" formControlName="queixaPrincipal">
+        </label>
+
+        <!-- Sintomas com checkboxes -->
+        <div class="checkbox-group">
+          <label class="checkbox-group-label">Sintomas associados</label>
+          <div class="checkbox-options">
+            <label *ngFor="let sintoma of sintomasDisponiveis" class="checkbox-item">
+              <input
+                type="checkbox"
+                [checked]="isSintomaSelecionado(sintoma.valor)"
+                (change)="onSintomaChange($event, sintoma.valor)">
+              {{ sintoma.label }}
+            </label>
+          </div>
+        </div>
+
+        <label>Quando começou?
+          <input type="text" formControlName="quandoComecou">
+        </label>
+
+        <label>Intensidade (0–10)
+          <input type="number" min="0" max="10" formControlName="intensidade">
+        </label>
+
+        <label>Frequência
+          <select formControlName="frequencia">
+            <option>Constante</option>
+            <option>Intermitente</option>
+            <option>Apenas após treino</option>
+          </select>
+        </label>
+      </section>
+  
+  
+      <!-- 3. Avaliação -->
+      <section formGroupName="avaliacao">
+        <h3>3 — Avaliação da Consulta</h3>
+  
+        <textarea rows="6" formControlName="exameFisico" placeholder="Exame físico"></textarea>
+  
+        <h4>Sinais vitais</h4>
+        <div class="grid-2" formGroupName="sinaisVitais">
+  
+          <label>FC <input type="text" formControlName="fc"></label>
+          <label>Pressão <input type="text" formControlName="pressao"></label>
+  
+          <label>Peso (kg)
+            <input type="number" formControlName="peso">
+          </label>
+  
+          <label>Altura (m)
+            <input type="number" step="0.01" formControlName="altura">
+          </label>
+  
+          <!-- IMC automático (somente leitura) -->
+          <label>IMC
+            <input type="text" formControlName="imc" readonly>
+          </label>
+        </div>
+  
+        <textarea rows="4" formControlName="amplitudeMovimento" placeholder="Amplitude de movimento"></textarea>
+        <textarea rows="4" formControlName="testeFuncional" placeholder="Teste funcional"></textarea>
+        <textarea rows="4" formControlName="observacoes" placeholder="Observações gerais"></textarea>
+      </section>
+  
+  
+      <!-- Botões -->
+      <div class="button-row">
+        <button type="button" class="cancel">Cancelar</button>
+        <button type="submit" class="save" (click)="salvar()">Salvar Consulta</button>
+      </div>
+
+    </form>
+  </div>
+  <!-- Fim do form-container -->
+
+</div>
+<!-- Fim do page-container -->
