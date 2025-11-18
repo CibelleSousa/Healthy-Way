@@ -13,11 +13,10 @@ import { CardQueixas } from './components/athleteProfile/card-queixas/card-queix
 import { Stats } from "./components/athleteProfile/stats/stats";
 import { CardAtleta } from './components/athleteList/card-atleta/card-atleta';
 import { SearchBar } from './components/general/search-bar/search-bar';
-import { AthleteProfile } from "./pages/athlete-profile/athlete-profile";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, CommonModule, MatSidenavModule, Header, Sidebar, CardAtleta, CardList, AbasNavegacaoComponent, Info, CardDisponibilidade, Stats, CardCalorias, CardQueixas, SearchBar, AthleteProfile],
+  imports: [RouterOutlet, CommonModule, MatSidenavModule, Header, Sidebar, CardAtleta, CardList, AbasNavegacaoComponent, Info, CardDisponibilidade, Stats, CardCalorias,CardQueixas, SearchBar],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
