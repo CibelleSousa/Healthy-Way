@@ -1,0 +1,115 @@
+<div class="profile-page-container">
+
+  <!-- Cabeçalho com botões de ação -->
+  <header class="profile-header">
+    <button class="btn-back" (click)="voltarParaLista()">
+      <i class="fa-solid fa-arrow-left"></i>
+      Voltar
+    </button>
+
+    <h1 class="profile-title">Perfil do Atleta</h1>
+
+    <button class="btn-new-consultation" (click)="novaConsulta()">
+      <i class="fa-solid fa-plus"></i>
+      Nova Consulta
+    </button>
+  </header>
+
+  <!-- Informações Básicas do Atleta -->
+  <section class="info-section">
+    <app-info [Atleta]="athlete"></app-info>
+  </section>
+
+  <!-- Seção de Dashboards -->
+  <div class="dashboards-section">
+
+    <!-- Título da Seção -->
+    <div class="section-header-dashboard">
+      <h2 class="section-title-dashboard">
+        <i class="fa-solid fa-chart-pie"></i>
+        Análise de Desempenho e Saúde
+      </h2>
+      <p class="section-subtitle-dashboard">Acompanhamento completo das métricas do atleta</p>
+    </div>
+
+    <!-- Grid de Dashboards -->
+    <div class="dashboards-grid">
+
+      <!-- Linha 1: Stats (ocupa toda a largura) -->
+      <section class="dashboard-card stats-card">
+        <div class="dashboard-card-header">
+          <div class="header-left">
+            <div class="icon-wrapper">
+              <i class="fa-solid fa-chart-line"></i>
+            </div>
+            <div class="header-text">
+              <h3 class="dashboard-title">Estatísticas de Performance</h3>
+              <p class="dashboard-subtitle">Métricas gerais de desempenho físico</p>
+            </div>
+          </div>
+        </div>
+        <div class="dashboard-card-content">
+          <app-stats [Atleta]="athlete"></app-stats>
+        </div>
+      </section>
+
+      <!-- Linha 2: Disponibilidade -->
+      <section class="dashboard-card disponibilidade-card">
+        <div class="dashboard-card-header">
+          <div class="header-left">
+            <div class="icon-wrapper disponibilidade-icon">
+              <i class="fa-solid fa-heart-pulse"></i>
+            </div>
+            <div class="header-text">
+              <h3 class="dashboard-title">Disponibilidade</h3>
+              <p class="dashboard-subtitle">Status dos últimos 30 dias</p>
+            </div>
+          </div>
+        </div>
+        <div class="dashboard-card-content">
+          <app-card-disponibilidade></app-card-disponibilidade>
+        </div>
+      </section>
+
+      <!-- Linha 2: Calorias -->
+      <section class="dashboard-card calorias-card">
+        <div class="dashboard-card-header">
+          <div class="header-left">
+            <div class="icon-wrapper calorias-icon">
+              <i class="fa-solid fa-utensils"></i>
+            </div>
+            <div class="header-text">
+              <h3 class="dashboard-title">Ingestão Calórica</h3>
+              <p class="dashboard-subtitle">Histórico de consumo alimentar</p>
+            </div>
+          </div>
+        </div>
+        <div class="dashboard-card-content">
+          <app-card-calorias></app-card-calorias>
+        </div>
+      </section>
+
+      <!-- Linha 3: Queixas (ocupa toda a largura) -->
+      <section class="dashboard-card queixas-card">
+        <div class="dashboard-card-header">
+          <div class="header-left">
+            <div class="icon-wrapper queixas-icon">
+              <i class="fa-solid fa-clipboard-list"></i>
+            </div>
+            <div class="header-text">
+              <h3 class="dashboard-title">Histórico de Queixas</h3>
+              <p class="dashboard-subtitle">Registro completo de queixas e acompanhamentos</p>
+            </div>
+          </div>
+        </div>
+        <div class="dashboard-card-content">
+          <app-card-queixas></app-card-queixas>
+        </div>
+      </section>
+
+    </div>
+
+  </div>
+
+</div>
+

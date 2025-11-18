@@ -12,6 +12,6 @@ export class ConsultaHome {
   constructor(private router: Router) {}
 
   novaConsulta() {
-    this.router.navigate(['/consulta/forms']);
+    this.router.navigate(['/atletas/consulta/forms']);
   }
 }

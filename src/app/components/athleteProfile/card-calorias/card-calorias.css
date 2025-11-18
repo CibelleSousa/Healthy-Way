@@ -1,13 +1,16 @@
 .card-root {
-  width: 1044px;
-  height: 537px;
-  background: #25252D;
-  border-radius: 12px;
-  padding: 20px 24px;
+  width: 100%;
+  max-width: 100%;
+  min-height: 350px;
+  background: transparent;
+  border-radius: 0;
+  padding: 25px 30px;
   box-sizing: border-box;
   color: #ffffff;
   font-family: "Roboto", sans-serif;
   overflow: hidden;
+  box-shadow: none;
+  border: none;
 }
 
 /* header */
@@ -71,11 +74,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  overflow-x: auto;
 }
 
 .chart-surface {
   background: #25252D;
-  width: 960px;
+  width: 100%;
+  max-width: 960px;
+  min-width: 600px;
   height: 420px;
   border-radius: 8px;
   padding: 12px;

@@ -1,141 +1,317 @@
+/* Container Principal */
+.info-container {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 30px;
+  width: 100%;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  color: #ffffff;
+}
 
+/* ========== SEÇÃO ESQUERDA: FOTO DO ATLETA ========== */
+.athlete-photo-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background: linear-gradient(145deg, #1E1E1E 0%, #252525 100%);
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  border: 1px solid #2A2A2A;
+}
 
-.container {
+.photo-wrapper {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #962DFF;
+  box-shadow: 0 8px 24px rgba(150, 45, 255, 0.3);
+}
+
+.athlete-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(150, 45, 255, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  padding: 2rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-
-.card {
-  width: 100%;
-  max-width: 350px;
-  background-color: #25252D; 
-  border-radius: 12px;
-  overflow: hidden;
+.photo-overlay i {
+  font-size: 60px;
   color: #ffffff;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); 
 }
 
-
-.card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #64328b; 
-  padding: 1rem 1.25rem;
-  color: white;
+.photo-wrapper:hover .photo-overlay {
+  opacity: 1;
 }
 
-.container-paciente {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
+.athlete-name-section {
+  text-align: center;
+  width: 100%;
 }
 
-.icone-card{
-  font-size: 24px; /* Controla o tamanho do ícone */
-  color: white;
-  width: 24px;  /* Ajuda a manter o alinhamento do layout */
-  text-align: center; /* Centraliza o ícone no espaço */
-}
-
-.nome-paciente {
-  font-size: 1.25rem;
+.athlete-name {
+  font-size: 24px;
   font-weight: 700;
-  margin: 0;
+  margin: 0 0 8px 0;
+  color: #ffffff;
+  letter-spacing: -0.5px;
 }
 
-.sexo-paciente {
-  font-size: 1.45rem;
-  /*font-weight: 700;*/
+.athlete-focus {
+  font-size: 16px;
+  font-weight: 500;
+  color: #C893FD;
+  margin: 0;
   font-style: italic;
 }
 
-.card-body {
-  padding: 1.25rem 1.5rem 1.75rem;
-}
-
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.75rem;
-  margin-bottom: 1.5rem; 
-}
-
-/* Ajuste dos boxes */
-.stat-item {
-  border-radius: 8px;
-  text-align: center;
+/* ========== SEÇÃO DIREITA: DETALHES ========== */
+.athlete-details-section {
   display: flex;
   flex-direction: column;
-  overflow: hidden; 
+  gap: 20px;
 }
 
-.box-parte-cima {
-  background-color: #8A4DC2; 
-  padding: 0.5rem;
+/* Linha de Cards */
+.details-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
 }
 
-.box-parte-baixo {
-  background-color: #713A9D; 
-  padding: 0.5rem;
-  flex-grow: 1;
+/* Card Individual */
+.detail-card {
+  background: linear-gradient(145deg, #1E1E1E 0%, #252525 100%);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  border: 1px solid #2A2A2A;
+  transition: all 0.3s ease;
+}
+
+.detail-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  border-color: #962DFF;
+}
+
+/* Ícone do Card */
+.detail-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #962DFF 0%, #7261A3 100%);
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
-.texto-acima-box {
-  font-family: roboto;
-  color: #ffffffd9;
-  font-size: 1.2rem;
+.detail-icon i {
+  font-size: 22px;
+  color: #ffffff;
+}
+
+/* Conteúdo do Card */
+.detail-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
+}
+
+.detail-label {
+  font-size: 12px;
   font-weight: 500;
-  margin: 0;
+  color: #A0A0A0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-.texto-abaixo-box {
-    font-family: roboto;
-  color: white;
-  font-size: 1.75rem;
+.detail-value {
+  font-size: 18px;
   font-weight: 700;
-  line-height: 1.1;
-  margin: 0;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
+/* Status Cards com Cores Específicas */
+.detail-card.status-ok {
+  border-color: #4ADE80;
+}
 
-/* Seção "Condições médicas" */
+.detail-card.status-ok .detail-icon {
+  background: linear-gradient(135deg, #4ADE80 0%, #22C55E 100%);
+}
+
+.detail-card.status-lesionado {
+  border-color: #EF4444;
+}
+
+.detail-card.status-lesionado .detail-icon {
+  background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);
+}
+
+.detail-card.status-restringido {
+  border-color: #F59E0B;
+}
+
+.detail-card.status-restringido .detail-icon {
+  background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+}
+
+/* ========== SEÇÃO DE CONDIÇÕES MÉDICAS ========== */
+.medical-conditions-section {
+  background: linear-gradient(145deg, #1E1E1E 0%, #252525 100%);
+  border-radius: 16px;
+  padding: 25px 30px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  border: 1px solid #2A2A2A;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #2A2A2A;
+}
+
+.section-header i {
+  font-size: 24px;
+  color: #962DFF;
+}
+
 .section-title {
-  font-family: roboto;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #F9FAFB;
-  margin-top: 0;
-  margin-bottom: 1rem; 
-  padding-bottom: 0.75rem; 
-  border-bottom: 1px solid #4a4a4a; 
-}
-
-.medical-conditions ul {
-  font-family: roboto;
-  font-weight: 300;
-  list-style-type: disc;
-  padding-left: 1.25rem; 
-  color: #e0e0e0;
-  font-size: 0.9rem;
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
   margin: 0;
+  letter-spacing: -0.3px;
 }
 
-.medical-conditions li {
-  margin-bottom: 0.5rem;
+.conditions-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
-.medical-conditions li:last-child {
-  margin-bottom: 0;
+.condition-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #962DFF 0%, #7261A3 100%);
+  color: #ffffff;
+  padding: 10px 18px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(150, 45, 255, 0.2);
+  transition: all 0.3s ease;
 }
 
-.medical-conditions li::marker {
-  color: #e0e0e0;
+.condition-tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(150, 45, 255, 0.3);
+}
+
+.condition-tag i {
+  font-size: 12px;
+}
+
+.no-conditions {
+  color: #A0A0A0;
+  font-style: italic;
+  font-size: 14px;
+}
+
+/* ========== RESPONSIVIDADE ========== */
+@media (max-width: 1400px) {
+  .info-container {
+    grid-template-columns: 280px 1fr;
+  }
+
+  .details-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .info-container {
+    grid-template-columns: 1fr;
+  }
+
+  .athlete-photo-section {
+    flex-direction: row;
+    padding: 25px;
+  }
+
+  .photo-wrapper {
+    width: 150px;
+    height: 150px;
+  }
+
+  .athlete-name-section {
+    text-align: left;
+  }
+
+  .details-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .details-row {
+    grid-template-columns: 1fr;
+  }
+
+  .athlete-photo-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .athlete-name-section {
+    text-align: center;
+  }
+
+  .detail-card {
+    padding: 15px;
+  }
+
+  .detail-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .detail-icon i {
+    font-size: 18px;
+  }
+
+  .detail-value {
+    font-size: 16px;
+  }
 }

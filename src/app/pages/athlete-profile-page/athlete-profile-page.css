@@ -1,0 +1,446 @@
+/* Container principal */
+.profile-page-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Cabeçalho da página */
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  padding: 20px 0;
+  border-bottom: 2px solid #2A2A2A;
+}
+
+.profile-title {
+  color: #ffffff;
+  font-size: 36px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+/* Botões do cabeçalho */
+.btn-back,
+.btn-new-consultation {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.3px;
+}
+
+.btn-back {
+  background: transparent;
+  color: #B0B0B0;
+  border: 1px solid #3D3D3D;
+}
+
+.btn-back:hover {
+  background-color: #2B2B2B;
+  border-color: #4A4A4A;
+  color: #ffffff;
+  transform: translateX(-3px);
+}
+
+.btn-new-consultation {
+  background: linear-gradient(135deg, #962DFF 0%, #7261A3 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(150, 45, 255, 0.3);
+}
+
+.btn-new-consultation:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(150, 45, 255, 0.4);
+  background: linear-gradient(135deg, #7261A3 0%, #962DFF 100%);
+}
+
+.btn-new-consultation i {
+  font-size: 14px;
+}
+
+/* Seção de informações básicas */
+.info-section {
+  margin-bottom: 50px;
+}
+
+.info-section ::ng-deep .info-container {
+  padding: 0;
+}
+
+/* ========== SEÇÃO DE DASHBOARDS ========== */
+.dashboards-section {
+  margin-top: 50px;
+}
+
+/* Cabeçalho da Seção de Dashboards */
+.section-header-dashboard {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 30px;
+  background: linear-gradient(135deg, rgba(150, 45, 255, 0.1) 0%, rgba(114, 97, 163, 0.1) 100%);
+  border-radius: 16px;
+  border: 1px solid rgba(150, 45, 255, 0.2);
+}
+
+.section-title-dashboard {
+  font-size: 32px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  letter-spacing: -0.5px;
+}
+
+.section-title-dashboard i {
+  font-size: 28px;
+  color: #962DFF;
+}
+
+.section-subtitle-dashboard {
+  font-size: 16px;
+  color: #A0A0A0;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Grid de dashboards */
+.dashboards-grid {
+  display: grid;
+  grid-template-columns: 450px 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 30px;
+  max-width: 100%;
+}
+
+/* ========== CARDS DE DASHBOARD ========== */
+.dashboard-card {
+  background: linear-gradient(145deg, #1E1E1E 0%, #252525 100%);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  border: 1px solid #2A2A2A;
+  transition: all 0.3s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  border-color: #962DFF;
+}
+
+/* Cabeçalho dos Cards */
+.dashboard-card-header {
+  background: linear-gradient(135deg, #962DFF 0%, #7261A3 100%);
+  padding: 20px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.icon-wrapper {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.icon-wrapper i {
+  font-size: 24px;
+  color: #ffffff;
+}
+
+/* Ícones com cores específicas */
+.disponibilidade-icon {
+  background: rgba(74, 222, 128, 0.2);
+}
+
+.calorias-icon {
+  background: rgba(251, 146, 60, 0.2);
+}
+
+.queixas-icon {
+  background: rgba(239, 68, 68, 0.2);
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.dashboard-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.3px;
+}
+
+.dashboard-subtitle {
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+}
+
+/* Conteúdo dos Cards */
+.dashboard-card-content {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow: visible;
+}
+
+/* ========== POSICIONAMENTO DOS CARDS ========== */
+
+/* Stats Card - Linha 1, ocupa toda a largura */
+.stats-card {
+  grid-column: 1 / -1;
+  grid-row: 1;
+}
+
+/* Disponibilidade Card - Linha 2, coluna esquerda */
+.disponibilidade-card {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+/* Calorias Card - Linha 2, coluna direita */
+.calorias-card {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+/* Queixas Card - Linha 3, ocupa toda a largura */
+.queixas-card {
+  grid-column: 1 / -1;
+  grid-row: 3;
+}
+
+/* Ocultar cabeçalhos internos dos componentes */
+.dashboard-card-content ::ng-deep .card-header,
+.dashboard-card-content ::ng-deep .historico-header,
+.dashboard-card-content ::ng-deep .title {
+  display: none;
+}
+
+/* Ajustar padding dos componentes internos */
+.dashboard-card-content ::ng-deep .container {
+  padding: 25px;
+  min-height: auto;
+}
+
+.dashboard-card-content ::ng-deep .card-root {
+  padding: 25px;
+}
+
+.dashboard-card-content ::ng-deep .historico-container {
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+}
+
+/* Animação de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========== RESPONSIVIDADE ========== */
+
+/* Telas médias-grandes */
+@media (max-width: 1600px) {
+  .dashboards-grid {
+    grid-template-columns: 400px 1fr;
+  }
+}
+
+/* Telas médias */
+@media (max-width: 1400px) {
+  .dashboards-grid {
+    grid-template-columns: 380px 1fr;
+  }
+
+  .section-title-dashboard {
+    font-size: 28px;
+  }
+
+  .dashboard-title {
+    font-size: 18px;
+  }
+}
+
+/* Tablets */
+@media (max-width: 1200px) {
+  .dashboards-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .stats-card,
+  .disponibilidade-card,
+  .calorias-card,
+  .queixas-card {
+    grid-column: 1;
+  }
+
+  .stats-card {
+    grid-row: 1;
+  }
+
+  .disponibilidade-card {
+    grid-row: 2;
+  }
+
+  .calorias-card {
+    grid-row: 3;
+  }
+
+  .queixas-card {
+    grid-row: 4;
+  }
+
+  .section-header-dashboard {
+    padding: 25px;
+  }
+
+  .section-title-dashboard {
+    font-size: 26px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .profile-page-container {
+    padding: 15px;
+  }
+
+  .profile-header {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .profile-title {
+    font-size: 24px;
+  }
+
+  .btn-back,
+  .btn-new-consultation {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .section-header-dashboard {
+    padding: 20px;
+  }
+
+  .section-title-dashboard {
+    font-size: 22px;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .section-subtitle-dashboard {
+    font-size: 14px;
+  }
+
+  .dashboard-card-header {
+    padding: 15px 20px;
+  }
+
+  .icon-wrapper {
+    width: 40px;
+    height: 40px;
+  }
+
+  .icon-wrapper i {
+    font-size: 20px;
+  }
+
+  .dashboard-title {
+    font-size: 16px;
+  }
+
+  .dashboard-subtitle {
+    font-size: 12px;
+  }
+
+  .dashboards-grid {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-page-container {
+    padding: 20px 15px;
+  }
+
+  .profile-header {
+    flex-direction: column;
+    gap: 15px;
+    align-items: stretch;
+  }
+
+  .profile-title {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .btn-back,
+  .btn-new-consultation {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .dashboards-grid {
+    gap: 20px;
+  }
+
+  .card-header {
+    padding: 15px 20px;
+  }
+
+  .card-title {
+    font-size: 18px;
+  }
+
+  .card-content {
+    padding: 20px;
+  }
+}
+

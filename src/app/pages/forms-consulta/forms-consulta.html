@@ -1,8 +1,13 @@
 <div class="page-container">
 
-    <!-- Cabeçalho da página -->
-    <h2 class="title">Nova Consulta</h2>
-  
+  <!-- Cabeçalho da página -->
+  <div class="page-header">
+    <h1 class="page-title">Nova Consulta</h1>
+    <p class="page-subtitle">Preencha os dados da consulta do atleta</p>
+  </div>
+
+  <!-- Formulário -->
+  <div class="form-container">
     <form [formGroup]="consultaForm" class="form-full">
   
       <!-- 1. Identificação -->
@@ -112,8 +117,10 @@
         <button type="button" class="cancel">Cancelar</button>
         <button type="submit" class="save" (click)="salvar()">Salvar Consulta</button>
       </div>
-  
+
     </form>
-  
   </div>
-  
+  <!-- Fim do form-container -->
+
+</div>
+<!-- Fim do page-container -->

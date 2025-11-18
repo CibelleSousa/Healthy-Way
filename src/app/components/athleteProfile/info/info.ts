@@ -10,5 +10,14 @@ import { ATHLETE_PROFILE_MOCK } from '../../../mocks/athleteProfile.mock';
   styleUrl: './info.css',
 })
 export class Info {
-@Input() Atleta: Athlete = ATHLETE_PROFILE_MOCK;
+  @Input() Atleta: Athlete = ATHLETE_PROFILE_MOCK;
+
+  calculateIMC(): string {
+    if (this.Atleta.weight && this.Atleta.height) {
+      const heightInMeters = this.Atleta.height / 100;
+      const imc = this.Atleta.weight / (heightInMeters * heightInMeters);
+      return imc.toFixed(1);
+    }
+    return 'N/A';
+  }
 }
