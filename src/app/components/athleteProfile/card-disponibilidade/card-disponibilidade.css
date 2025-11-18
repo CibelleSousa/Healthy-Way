@@ -1,16 +1,20 @@
 
 .container{
-    width: 574px;
-    height: 287px;
-    border-radius: 10px;
+    width: 100%;
+    max-width: 100%;
+    min-height: 350px;
+    border-radius: 0;
     font-family: "Roboto", sans-serif;
-    background: #25252D;
+    background: transparent;
     align-content: center;
     align-items: center;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-
+    justify-content: center;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    box-shadow: none;
+    border: none;
 }
 
 .title{
@@ -18,13 +22,17 @@
     align-content: center;
     text-align: center;
     color: #ffffff;
+    margin-bottom: 25px;
+    font-size: 18px;
 }
 .wrapper {
-  max-width: 437px;
+  width: 100%;
+  max-width: 100%;
   display: flex;
   align-items: center;
-  align-content: center;
-  gap: 16px;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
 }
 
 .chart-area {

@@ -1,4 +1,5 @@
 import { Component, Input} from '@angular/core';
+import { Router } from '@angular/router';
 import Athlete from '../../../core/models/athlete.model';
 import { ATHLETE_PROFILE_MOCK } from '../../../mocks/athleteProfile.mock';
 
@@ -10,4 +11,11 @@ import { ATHLETE_PROFILE_MOCK } from '../../../mocks/athleteProfile.mock';
 })
 export class CardAtleta {
   @Input() Atleta: Athlete = ATHLETE_PROFILE_MOCK;
+
+  constructor(private router: Router) {}
+
+  onCardClick() {
+    // Navega para o perfil do atleta usando o ID
+    this.router.navigate(['/atletas', this.Atleta.id]);
+  }
 }

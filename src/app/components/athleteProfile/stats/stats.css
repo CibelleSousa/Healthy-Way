@@ -1,13 +1,18 @@
 #mainArea {
     display: flex;
-    width: 575px;
-    height: 471px;
-    padding: 48px 28px;
+    width: 100%;
+    max-width: 100%;
+    min-height: auto;
+    padding: 40px 30px;
     align-items: center;
-    gap: 29px;
+    justify-content: center;
+    gap: 40px;
     flex-shrink: 0;
     border-radius: 20px;
     background: #25252D;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    border: 1px solid #2A2A2A;
+    box-sizing: border-box;
 }
 .graphArea{
     display: flex;

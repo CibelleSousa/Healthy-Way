@@ -1,59 +1,128 @@
-<div class="container">
-  <div class="card">
-    <header class="card-header">
-      <div class="container-paciente">
-        <i class="fa-solid fa-basketball icone-card"></i>
-        <h1 class="nome-paciente">{{ Atleta.name }}</h1>
+<div class="info-container">
+
+  <!-- Seção Esquerda: Foto do Atleta -->
+  <div class="athlete-photo-section">
+    <div class="photo-wrapper">
+      <img [src]="Atleta.photoUrl" [alt]="Atleta.name" class="athlete-photo">
+      <div class="photo-overlay">
+        <i class="fa-solid fa-user-circle"></i>
       </div>
-      <span class="sexo-paciente">{{ Atleta.gender}}</span>
-    </header>
-
-    <main class="card-body">
-      <section class="stats-grid">
-            <div class="stat-item">
-                <div class="box-parte-cima">
-                    <p class = "texto-acima-box">Idade</p>
-                </div>
-                <div class="box-parte-baixo">
-                    <p class="texto-abaixo-box">{{Atleta.age}}</p>
-                </div>
-            </div>
-            <div class="stat-item">
-                <div class="box-parte-cima">
-                    <p class = "texto-acima-box">Nível</p>
-                </div>
-                <div class="box-parte-baixo">
-                    <p class="texto-abaixo-box">{{Atleta.level}}</p>
-                </div>
-            </div>
-            <div class="stat-item">
-                <div class="box-parte-cima">
-                    <p class = "texto-acima-box">Status</p>
-                </div>
-                <div class="box-parte-baixo">
-                    <p class="texto-abaixo-box">{{Atleta.status}}</p>
-                </div>
-            </div>
-      </section>
-
-      <section class="medical-conditions">
-        <h2 class="section-title">Condições Médicas</h2>
-        <ul>
-          @for (condition of Atleta.medicalConditions; track condition) {
-            <li>{{ condition }}</li>
-          }
-        </ul>
-      </section>
-    </main>
+    </div>
+    <div class="athlete-name-section">
+      <h1 class="athlete-name">{{ Atleta.name }}</h1>
+      <p class="athlete-focus">{{ Atleta.focus }}</p>
+    </div>
   </div>
-</div>
 
-  <div class="pagina"> 
+  <!-- Seção Direita: Informações Detalhadas -->
+  <div class="athlete-details-section">
 
-  <div class="cartao">
+    <!-- Linha 1: Informações Básicas -->
+    <div class="details-row">
+      <div class="detail-card">
+        <div class="detail-icon">
+          <i class="fa-solid fa-calendar-days"></i>
+        </div>
+        <div class="detail-content">
+          <span class="detail-label">Idade</span>
+          <span class="detail-value">{{ Atleta.age }} anos</span>
+        </div>
+      </div>
+
+      <div class="detail-card">
+        <div class="detail-icon">
+          <i class="fa-solid fa-venus-mars"></i>
+        </div>
+        <div class="detail-content">
+          <span class="detail-label">Gênero</span>
+          <span class="detail-value">{{ Atleta.gender }}</span>
+        </div>
+      </div>
+
+      <div class="detail-card">
+        <div class="detail-icon">
+          <i class="fa-solid fa-trophy"></i>
+        </div>
+        <div class="detail-content">
+          <span class="detail-label">Nível</span>
+          <span class="detail-value">{{ Atleta.level }}</span>
+        </div>
+      </div>
+
+      <div class="detail-card" [ngClass]="'status-' + Atleta.status.toLowerCase()">
+        <div class="detail-icon">
+          <i class="fa-solid fa-heart-pulse"></i>
+        </div>
+        <div class="detail-content">
+          <span class="detail-label">Status</span>
+          <span class="detail-value">{{ Atleta.status }}</span>
+        </div>
+      </div>
     </div>
 
-  <aside class="disponibilidade-card">
-    </aside>
+    <!-- Linha 2: Medidas Físicas -->
+    <div class="details-row">
+      <div class="detail-card">
+        <div class="detail-icon">
+          <i class="fa-solid fa-weight-scale"></i>
+        </div>
+        <div class="detail-content">
+          <span class="detail-label">Peso</span>
+          <span class="detail-value">{{ Atleta.weight }} kg</span>
+        </div>
+      </div>
+
+      <div class="detail-card">
+        <div class="detail-icon">
+          <i class="fa-solid fa-ruler-vertical"></i>
+        </div>
+        <div class="detail-content">
+          <span class="detail-label">Altura</span>
+          <span class="detail-value">{{ Atleta.height }} cm</span>
+        </div>
+      </div>
+
+      <div class="detail-card">
+        <div class="detail-icon">
+          <i class="fa-solid fa-calculator"></i>
+        </div>
+        <div class="detail-content">
+          <span class="detail-label">IMC</span>
+          <span class="detail-value">{{ calculateIMC() }}</span>
+        </div>
+      </div>
+
+      <div class="detail-card">
+        <div class="detail-icon">
+          <i class="fa-solid fa-basketball"></i>
+        </div>
+        <div class="detail-content">
+          <span class="detail-label">Modalidade</span>
+          <span class="detail-value">{{ Atleta.focus }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Linha 3: Condições Médicas -->
+    <div class="medical-conditions-section">
+      <div class="section-header">
+        <i class="fa-solid fa-notes-medical"></i>
+        <h3 class="section-title">Condições Médicas</h3>
+      </div>
+      <div class="conditions-list">
+        @if (Atleta.medicalConditions && Atleta.medicalConditions.length > 0) {
+          @for (condition of Atleta.medicalConditions; track condition) {
+            <span class="condition-tag">
+              <i class="fa-solid fa-circle-check"></i>
+              {{ condition }}
+            </span>
+          }
+        } @else {
+          <span class="no-conditions">Nenhuma condição médica registrada</span>
+        }
+      </div>
+    </div>
+
+  </div>
 
 </div>
