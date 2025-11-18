@@ -1,6 +1,10 @@
 #MainArea{
     position: relative;
-    width: 276px;
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+    width: 260px;
     height: 400px;
     flex-shrink: 0;
     border-radius: 15px;
@@ -8,7 +12,7 @@
     background: radial-gradient(77.17% 108.57% at 14.13% 11.44%, rgba(190, 212, 232, 0.00) 0%, rgba(146, 129, 225, 0.56) 100%), #FFF;
 }
 #MainArea:hover{
-    width: 276px;
+    width: 260px;
     height: 400px;
     flex-shrink: 0;
     border-radius: 15px;
@@ -42,7 +46,7 @@
     object-fit: cover;
     border-radius: 125px;
     border: 4px solid #451F6B;
-    background:lightgray 0px 0px / 100% 133.333% no-repeat;
+    background:#D5D2F3 0px 0px / 100% 133.333% no-repeat;
 }
 #ProfileName{
     color: #451F6B;
@@ -56,8 +60,9 @@
 #ItemList{
     position: absolute;
     bottom: 0;
+    left: 0;
     display: flex;
-    width: 276px;
+    width: 260px;
     height: 90px;
     min-height: 80px;
     max-height: 91px;
@@ -68,7 +73,7 @@
     background: #962DFF;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
-    padding-top: 20px;
+    padding-top: 10px;
     box-sizing: border-box;
 }
 .listItem{

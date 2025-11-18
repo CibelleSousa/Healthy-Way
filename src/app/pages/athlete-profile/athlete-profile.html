@@ -10,17 +10,64 @@
 <div id="SpecificArea">
     <div id="ColumnOne">
         <app-card-queixas></app-card-queixas>
-        <div id="ArterialPressurePlaceHolder"><p>APP</p></div>
-        <div id="LabExamensPlaceholder"><p>LEP</p></div>
+        <div id="ArterialPressurePlaceHolder">
+            <h1>Pressão arterial 100mmHG</h1>
+            <h2>Análise últimos 60 dias</h2>
+            @for (medicao of atleta.bloodPressureHistory; track $index) {
+                <p>Medição dia {{medicao.label}}: {{medicao.currentMonth}}mmHg - Comparativo 30 dias antes: {{medicao.previousMonth}}</p>
+            }
+        </div>
+        <div id="LabExamensPlaceholder">
+            <h1>Exames Laboratoriais - Ureia</h1>
+            @for (item of atleta.labExams; track $index) {
+                <div class="LEPEntry">
+                    <p>Data: {{item.date}} </p>
+                    <p>Nível: {{item.result}} </p>
+                    <p>Status: {{item.status}} </p>
+                </div>
+            }
+        </div>
     </div>
     <div id="ColumnTwo">
-        <div id="HealthIndicatorsPlaceholder"><p>HIP</p></div>
+        <div id="HealthIndicatorsPlaceholder"><p>
+            <h1>Indicadores de saúde</h1>
+            <h2>Peso</h2>
+            <div id="HIPLine"></div>
+            @for (item of atleta.weightHistory; track $index) {
+                <p>{{item.label}} - {{item.value}}Kg</p>
+            }
+
+        </div>
         <app-card-calorias></app-card-calorias>
         <div id="BottomColumnTwo">
-            <div id="HormonalLevelPlaceholder"><p>HLP</p></div>
+            <div id="HormonalLevelPlaceholder">
+                <h1>Hormônio: Cortisol</h1>
+                <h3>Níveis</h3>
+                <div id="value">
+                    <h2 class="title">Valor:</h2>
+                    <p>{{atleta.hormonalLevels?.cortisol?.value}}</p>
+                </div>
+                <div id="status">
+                    <h2 class="title"> Status:</h2>
+                    <p>{{atleta.hormonalLevels?.cortisol?.status}}</p>
+                </div>
+            </div>
             <div id="ColumnBottomColumnTwo">
                 <app-card-disponibilidade></app-card-disponibilidade>
-                <div id="TestLevelPlaceholder"><p>TLP</p></div>
+                <div id="TestLevelPlaceholder">
+                    <h1>Hormônio: Testosterona</h1>
+                    <h3>Níveis</h3>
+                    <div id="infoBox">
+                        <div id="value">
+                            <h2 class="title">Valor:</h2>
+                            <p>{{atleta.hormonalLevels?.cortisol?.value}}</p>
+                        </div>
+                        <div id="status">
+                            <h2 class="title"> Status:</h2>
+                            <p>{{atleta.hormonalLevels?.cortisol?.status}}</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
