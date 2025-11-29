@@ -1,1 +1,427 @@
-<p>settings works!</p>
+<div class="settings-container">
+
+  <!-- Cabeçalho -->
+  <header class="settings-header">
+    <div class="header-content">
+      <div class="header-icon">
+        <i class="fa-solid fa-gear"></i>
+      </div>
+      <div class="header-text">
+        <h1 class="settings-title">Configurações</h1>
+        <p class="settings-subtitle">Gerencie suas preferências e informações do sistema</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navegação por Abas -->
+  <nav class="settings-tabs">
+    <button
+      class="tab-button"
+      [class.active]="abaAtiva === 'perfil'"
+      (click)="selecionarAba('perfil')">
+      <i class="fa-solid fa-user"></i>
+      <span>Perfil</span>
+    </button>
+    <button
+      class="tab-button"
+      [class.active]="abaAtiva === 'sistema'"
+      (click)="selecionarAba('sistema')">
+      <i class="fa-solid fa-sliders"></i>
+      <span>Sistema</span>
+    </button>
+    <button
+      class="tab-button"
+      [class.active]="abaAtiva === 'seguranca'"
+      (click)="selecionarAba('seguranca')">
+      <i class="fa-solid fa-shield-halved"></i>
+      <span>Segurança</span>
+    </button>
+    <button
+      class="tab-button"
+      [class.active]="abaAtiva === 'sobre'"
+      (click)="selecionarAba('sobre')">
+      <i class="fa-solid fa-circle-info"></i>
+      <span>Sobre</span>
+    </button>
+  </nav>
+
+  <!-- Conteúdo das Abas -->
+  <div class="settings-content">
+
+    <!-- ABA: PERFIL -->
+    <section class="tab-content" *ngIf="abaAtiva === 'perfil'">
+      <div class="content-card">
+        <div class="card-header">
+          <h2 class="card-title">
+            <i class="fa-solid fa-user-circle"></i>
+            Informações do Perfil
+          </h2>
+          <p class="card-description">Atualize seus dados pessoais e profissionais</p>
+        </div>
+
+        <div class="card-body">
+          <!-- Foto do Perfil -->
+          <div class="profile-photo-section">
+            <div class="photo-wrapper">
+              <img [src]="perfil.fotoUrl" [alt]="perfil.nome" class="profile-photo">
+              <button class="btn-change-photo" (click)="selecionarFoto()">
+                <i class="fa-solid fa-camera"></i>
+              </button>
+            </div>
+            <div class="photo-info">
+              <h3 class="photo-name">{{ perfil.nome }}</h3>
+              <p class="photo-specialty">{{ perfil.especialidade }}</p>
+            </div>
+          </div>
+
+          <!-- Formulário de Dados -->
+          <form class="settings-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">
+                  <i class="fa-solid fa-user"></i>
+                  Nome Completo
+                </label>
+                <input
+                  type="text"
+                  class="form-input"
+                  [(ngModel)]="perfil.nome"
+                  name="nome"
+                  placeholder="Digite seu nome completo">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">
+                  <i class="fa-solid fa-envelope"></i>
+                  E-mail
+                </label>
+                <input
+                  type="email"
+                  class="form-input"
+                  [(ngModel)]="perfil.email"
+                  name="email"
+                  placeholder="seu@email.com">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">
+                  <i class="fa-solid fa-phone"></i>
+                  Telefone
+                </label>
+                <input
+                  type="tel"
+                  class="form-input"
+                  [(ngModel)]="perfil.telefone"
+                  name="telefone"
+                  placeholder="(00) 00000-0000">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">
+                  <i class="fa-solid fa-stethoscope"></i>
+                  Especialidade
+                </label>
+                <input
+                  type="text"
+                  class="form-input"
+                  [(ngModel)]="perfil.especialidade"
+                  name="especialidade"
+                  placeholder="Sua especialidade">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">
+                  <i class="fa-solid fa-id-card"></i>
+                  CRM
+                </label>
+                <input
+                  type="text"
+                  class="form-input"
+                  [(ngModel)]="perfil.crm"
+                  name="crm"
+                  placeholder="CRM/UF 000000">
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button type="button" class="btn-save" (click)="salvarPerfil()">
+                <i class="fa-solid fa-floppy-disk"></i>
+                Salvar Alterações
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABA: SISTEMA -->
+    <section class="tab-content" *ngIf="abaAtiva === 'sistema'">
+      <div class="content-card">
+        <div class="card-header">
+          <h2 class="card-title">
+            <i class="fa-solid fa-sliders"></i>
+            Preferências do Sistema
+          </h2>
+          <p class="card-description">Configure notificações e preferências gerais</p>
+        </div>
+
+        <div class="card-body">
+          <!-- Notificações -->
+          <div class="settings-section">
+            <h3 class="section-title">
+              <i class="fa-solid fa-bell"></i>
+              Notificações
+            </h3>
+
+            <div class="toggle-group">
+              <div class="toggle-item">
+                <div class="toggle-info">
+                  <span class="toggle-label">Notificações por E-mail</span>
+                  <span class="toggle-description">Receba atualizações importantes por e-mail</span>
+                </div>
+                <label class="toggle-switch">
+                  <input
+                    type="checkbox"
+                    [(ngModel)]="configuracoes.notificacoesEmail"
+                    name="notificacoesEmail">
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+
+              <div class="toggle-item">
+                <div class="toggle-info">
+                  <span class="toggle-label">Notificações Push</span>
+                  <span class="toggle-description">Receba notificações no navegador</span>
+                </div>
+                <label class="toggle-switch">
+                  <input
+                    type="checkbox"
+                    [(ngModel)]="configuracoes.notificacoesPush"
+                    name="notificacoesPush">
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+
+              <div class="toggle-item">
+                <div class="toggle-info">
+                  <span class="toggle-label">Alertas de Consultas</span>
+                  <span class="toggle-description">Notificações sobre consultas agendadas</span>
+                </div>
+                <label class="toggle-switch">
+                  <input
+                    type="checkbox"
+                    [(ngModel)]="configuracoes.notificacoesConsultas"
+                    name="notificacoesConsultas">
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Idioma e Tema -->
+          <div class="settings-section">
+            <h3 class="section-title">
+              <i class="fa-solid fa-palette"></i>
+              Aparência
+            </h3>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">
+                  <i class="fa-solid fa-language"></i>
+                  Idioma
+                </label>
+                <select
+                  class="form-select"
+                  [(ngModel)]="configuracoes.idioma"
+                  name="idioma">
+                  <option value="pt-BR">Português (Brasil)</option>
+                  <option value="en-US">English (US)</option>
+                  <option value="es-ES">Español</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">
+                  <i class="fa-solid fa-moon"></i>
+                  Tema
+                </label>
+                <select
+                  class="form-select"
+                  [(ngModel)]="configuracoes.tema"
+                  name="tema">
+                  <option value="escuro">Escuro</option>
+                  <option value="claro">Claro</option>
+                  <option value="auto">Automático</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" class="btn-save" (click)="salvarConfiguracoes()">
+              <i class="fa-solid fa-floppy-disk"></i>
+              Salvar Configurações
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABA: SEGURANÇA -->
+    <section class="tab-content" *ngIf="abaAtiva === 'seguranca'">
+      <div class="content-card">
+        <div class="card-header">
+          <h2 class="card-title">
+            <i class="fa-solid fa-shield-halved"></i>
+            Segurança da Conta
+          </h2>
+          <p class="card-description">Gerencie a segurança e privacidade da sua conta</p>
+        </div>
+
+        <div class="card-body">
+          <!-- Alterar Senha -->
+          <div class="settings-section">
+            <h3 class="section-title">
+              <i class="fa-solid fa-key"></i>
+              Alterar Senha
+            </h3>
+
+            <form class="settings-form">
+              <div class="form-group">
+                <label class="form-label">
+                  <i class="fa-solid fa-lock"></i>
+                  Senha Atual
+                </label>
+                <input
+                  type="password"
+                  class="form-input"
+                  [(ngModel)]="senhaAtual"
+                  name="senhaAtual"
+                  placeholder="Digite sua senha atual">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">
+                  <i class="fa-solid fa-lock"></i>
+                  Nova Senha
+                </label>
+                <input
+                  type="password"
+                  class="form-input"
+                  [(ngModel)]="novaSenha"
+                  name="novaSenha"
+                  placeholder="Digite a nova senha (mínimo 8 caracteres)">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">
+                  <i class="fa-solid fa-lock"></i>
+                  Confirmar Nova Senha
+                </label>
+                <input
+                  type="password"
+                  class="form-input"
+                  [(ngModel)]="confirmarSenha"
+                  name="confirmarSenha"
+                  placeholder="Confirme a nova senha">
+              </div>
+
+              <div class="form-actions">
+                <button type="button" class="btn-save" (click)="alterarSenha()">
+                  <i class="fa-solid fa-check"></i>
+                  Alterar Senha
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABA: SOBRE -->
+    <section class="tab-content" *ngIf="abaAtiva === 'sobre'">
+      <div class="content-card">
+        <div class="card-header">
+          <h2 class="card-title">
+            <i class="fa-solid fa-circle-info"></i>
+            Sobre o Sistema
+          </h2>
+          <p class="card-description">Informações sobre o Healthy Way</p>
+        </div>
+
+        <div class="card-body">
+          <!-- Logo e Versão -->
+          <div class="about-section">
+            <div class="about-logo">
+              <i class="fa-solid fa-heartbeat"></i>
+            </div>
+            <h2 class="about-title">Healthy Way</h2>
+            <p class="about-version">Versão {{ versaoSistema }}</p>
+            <p class="about-description">
+              Sistema de gestão de atletas e consultas médicas esportivas.
+              Desenvolvido para profissionais da saúde que acompanham o desempenho
+              e bem-estar de atletas.
+            </p>
+          </div>
+
+          <!-- Informações Adicionais -->
+          <div class="info-grid">
+            <div class="info-item">
+              <i class="fa-solid fa-code"></i>
+              <div class="info-content">
+                <span class="info-label">Tecnologia</span>
+                <span class="info-value">Angular 20.3.0</span>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <i class="fa-solid fa-calendar"></i>
+              <div class="info-content">
+                <span class="info-label">Última Atualização</span>
+                <span class="info-value">Novembro 2025</span>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <i class="fa-solid fa-envelope"></i>
+              <div class="info-content">
+                <span class="info-label">Suporte</span>
+                <span class="info-value">suporte@healthyway.com</span>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <i class="fa-solid fa-globe"></i>
+              <div class="info-content">
+                <span class="info-label">Website</span>
+                <span class="info-value">www.healthyway.com</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Links -->
+          <div class="about-links">
+            <a href="#" class="about-link">
+              <i class="fa-solid fa-file-contract"></i>
+              Termos de Uso
+            </a>
+            <a href="#" class="about-link">
+              <i class="fa-solid fa-shield-halved"></i>
+              Política de Privacidade
+            </a>
+            <a href="#" class="about-link">
+              <i class="fa-solid fa-book"></i>
+              Documentação
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>

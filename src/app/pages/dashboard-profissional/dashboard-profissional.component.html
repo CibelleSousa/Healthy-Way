@@ -1,0 +1,150 @@
+<div class="dashboard-container">
+
+  <!-- Cabeçalho -->
+  <header class="dashboard-header">
+    <div class="header-content">
+      <div class="saudacao">
+        <h1 class="titulo-saudacao">Olá, {{ nomeProfissional }}</h1>
+        <p class="ultimo-acesso">
+          <i class="fa-solid fa-clock"></i>
+          Último acesso: {{ ultimoAcesso }}
+        </p>
+      </div>
+      <div class="header-actions">
+        <button class="btn-notificacoes">
+          <i class="fa-solid fa-bell"></i>
+          <span class="badge-notificacao">{{ notificacoes.length }}</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Ações Rápidas -->
+  <section class="acoes-rapidas-section">
+    <h2 class="section-title">
+      <i class="fa-solid fa-bolt"></i>
+      Ações Rápidas
+    </h2>
+    <div class="acoes-rapidas-grid">
+      @for (acao of acoesRapidas; track acao.titulo) {
+        <button class="acao-card" (click)="navegarPara(acao.rota)" [style.border-color]="acao.cor">
+          <div class="acao-icone" [style.background]="acao.cor">
+            <i class="fa-solid {{ acao.icone }}"></i>
+          </div>
+          <span class="acao-titulo">{{ acao.titulo }}</span>
+        </button>
+      }
+    </div>
+  </section>
+
+  <!-- Cards de Resumo -->
+  <section class="resumo-section">
+    <h2 class="section-title">
+      <i class="fa-solid fa-chart-pie"></i>
+      Resumo do Dia
+    </h2>
+    <div class="resumo-grid">
+      @for (card of cardsResumo; track card.titulo) {
+        <div class="resumo-card" (click)="card.rota && navegarPara(card.rota)">
+          <div class="card-icone" [style.background]="card.cor">
+            <i class="fa-solid {{ card.icone }}"></i>
+          </div>
+          <div class="card-info">
+            <span class="card-titulo">{{ card.titulo }}</span>
+            <span class="card-valor">{{ card.valor }}</span>
+          </div>
+        </div>
+      }
+    </div>
+  </section>
+
+  <!-- Layout de 2 Colunas -->
+  <div class="two-column-layout">
+
+    <!-- Coluna Esquerda: Consultas do Dia -->
+    <section class="consultas-section">
+      <div class="section-header">
+        <h2 class="section-title">
+          <i class="fa-solid fa-calendar-day"></i>
+          Consultas do Dia
+        </h2>
+        <button class="btn-ver-todas" (click)="navegarPara('/consultas')">
+          Ver todas
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+
+      <div class="table-container">
+        <table class="consultas-table">
+          <thead>
+            <tr>
+              <th>Atleta</th>
+              <th>Horário</th>
+              <th>Profissional</th>
+              <th>Status</th>
+              <th>Ação</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (consulta of consultasDia; track consulta.id) {
+              <tr>
+                <td class="atleta-cell">
+                  <i class="fa-solid fa-user-circle"></i>
+                  {{ consulta.atleta }}
+                </td>
+                <td class="horario-cell">
+                  <i class="fa-solid fa-clock"></i>
+                  {{ consulta.horario }}
+                </td>
+                <td class="profissional-cell">{{ consulta.profissional }}</td>
+                <td>
+                  <span class="status-badge" [ngClass]="getStatusClass(consulta.status)">
+                    {{ consulta.statusLabel }}
+                  </span>
+                </td>
+                <td>
+                  <button class="btn-acao" (click)="abrirConsulta(consulta)">
+                    {{ getAcaoTexto(consulta.status) }}
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </button>
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Coluna Direita: Notificações -->
+    <section class="notificacoes-section">
+      <div class="section-header">
+        <h2 class="section-title">
+          <i class="fa-solid fa-bell"></i>
+          Notificações Recentes
+        </h2>
+      </div>
+
+      <div class="notificacoes-lista">
+        @for (notificacao of notificacoes; track notificacao.id) {
+          <div class="notificacao-item" [ngClass]="getNotificacaoClass(notificacao.tipo)">
+            <div class="notificacao-icone">
+              <i class="fa-solid {{ notificacao.icone }}"></i>
+            </div>
+            <div class="notificacao-conteudo">
+              <p class="notificacao-mensagem">{{ notificacao.mensagem }}</p>
+              <span class="notificacao-tempo">{{ notificacao.tempo }}</span>
+            </div>
+          </div>
+        }
+      </div>
+
+      <button class="btn-ver-todas-notificacoes">
+        Ver todas as notificações
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </section>
+
+  </div>
+
+</div>
+
