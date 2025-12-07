@@ -19,4 +19,9 @@ export class AthleteService {
   getAthletes(): Observable<Athlete[]> {
     return this.http.get<Athlete[]>(this.apiUrl);
   }
+
+  getAthleteById(id: number): Observable<Athlete> {
+    return this.http.get<Athlete>(`${this.apiUrl}/${id}`);
+  }
+  
 }
