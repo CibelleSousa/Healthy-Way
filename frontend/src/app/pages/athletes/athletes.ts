@@ -3,6 +3,7 @@ import { SearchBar } from '../../components/general/search-bar/search-bar';
 import { CardList } from '../../components/athleteList/card-list/card-list';
 import { ATHLETE_LIST_MOCK } from '../../mocks/athleteList.mock';
 import Athlete from '../../core/models/athlete.model';
+import { AthleteService } from '../../core/services/athlete';
 
 @Component({
   selector: 'app-athletes',
@@ -12,13 +13,22 @@ import Athlete from '../../core/models/athlete.model';
 })
 export class Athletes {
 
-  private allAthletes: Athlete[] = ATHLETE_LIST_MOCK;
+  private allAthletes: Athlete[] = [];
 
   public filteredAthletes: Athlete[] = [];
 
+  constructor(private atlheteService: AthleteService) {}
+
   ngOnInit(): void {
-    // Começa exibindo tudo
-    this.filteredAthletes = this.allAthletes;
+    this.atlheteService.getAthletes().subscribe({
+      next: (dadosDoBakcend) => {
+        this.allAthletes = dadosDoBakcend;
+        this.filteredAthletes = dadosDoBakcend;
+      },
+      error: (erro) => {
+        console.log('Erro ao buscar atletas: ', erro);
+      }
+    })
   }
 
   public onSearch(query: string): void {
