@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.http.HttpStatus;
 
 import java.util.List;
 
@@ -31,5 +32,27 @@ public class AthleteController {
         return service.findById(id)
                 .map(record -> ResponseEntity.ok().body(record)) // Se achou, retorna 200 OK com o atleta
                 .orElse(ResponseEntity.notFound().build()); // Se não achou, retorna 404 Not Found
+    }
+
+    @PostMapping // Responde a POST /athletes
+    public ResponseEntity<Athlete> criar(@RequestBody Athlete athlete) {
+        // @RequestBody: Pega o JSON do corpo da requisição e transforma em Objeto Java
+        Athlete novoAtleta = service.create(athlete);
+        // Retorna status 201 Created e o objeto criado
+        return ResponseEntity.status(HttpStatus.CREATED).body(novoAtleta);
+    }
+
+    @PutMapping("/{id}") // Responde a PUT /athletes/id
+    public ResponseEntity<Athlete> atualizar(@PathVariable Long id, @RequestBody Athlete athlete) {
+        
+        Athlete atletaAtualizado = service.update(id, athlete);
+        
+        return ResponseEntity.ok(atletaAtualizado);
+    }
+
+    @DeleteMapping("/{id}") // Responde a DELETE /athletes/id
+    public ResponseEntity<Void> deletar(@PathVariable Long id) {
+        service.delete(id);
+        return ResponseEntity.noContent().build(); // Retorna código 204 (Sucesso sem conteúdo)
     }
 }
