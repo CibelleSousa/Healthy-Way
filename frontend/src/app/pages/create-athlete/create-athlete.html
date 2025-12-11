@@ -1,0 +1,28 @@
+<div class="Main">
+<p class = "pageTitle">Adicionar Atleta</p>
+<div class="inputArea">
+    <p class = "title">Nome</p>
+    <input class="inputField" type="text" [value]="atleta.name" (input)="atleta.name = $event.target.value">
+</div>
+<div class="inputArea">
+    <p class = "title">Idade</p>
+    <input class="inputField" type="number" [value]="atleta.age" (input)="atleta.age = $event.target.valueAsNumber">
+</div>
+<div class="inputArea">
+    <p class = "title">Altura</p>
+    <input class="inputField" type="number" [value]="atleta.height" (input)="atleta.height = $event.target.valueAsNumber">
+</div>
+<div class="inputArea">
+    <p class = "title">Peso</p>
+    <input class="inputField" type="number" [value]="atleta.weight" (input)="atleta.weight = $event.target.valueAsNumber">
+</div>
+<div class="inputArea">
+    <p class = "title">Foco</p>
+    <input class="inputField" type="text" [value]="atleta.focus" (input)="atleta.focus = $event.target.value">
+</div>
+<div class="inputArea">
+    <p class = "title">Gênero</p>
+    <input class="inputField" type="text" [value]="atleta.gender" (input)="atleta.gender = $event.target.value">
+</div>
+<button class="SendButton" (click)="submit()" routerLink="/atletas">Enviar</button>
+</div>

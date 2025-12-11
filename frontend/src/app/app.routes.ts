@@ -4,6 +4,7 @@ import { Profile } from './pages/profile/profile';
 import { Athletes } from './pages/athletes/athletes';
 import { Settings } from './pages/settings/settings';
 import { AthleteProfile } from './pages/athlete-profile/athlete-profile';
+import { CreateAthlete } from './pages/create-athlete/create-athlete';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -11,5 +12,6 @@ export const routes: Routes = [
   { path: 'perfil', component: Profile },
   { path: 'atletas', component: Athletes },
   { path: 'configuracoes', component: Settings },
-  { path: 'perfilAtleta', component:AthleteProfile}
+  { path: 'perfilAtleta', component:AthleteProfile},
+  { path: 'criarAtleta', component:CreateAthlete}
 ];
