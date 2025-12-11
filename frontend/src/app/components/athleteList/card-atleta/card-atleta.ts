@@ -2,6 +2,7 @@ import { Component, Input} from '@angular/core';
 import Athlete from '../../../core/models/athlete.model';
 import { ATHLETE_PROFILE_MOCK } from '../../../mocks/athleteProfile.mock';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { AthleteService } from '../../../core/services/athlete';
 
 @Component({
   selector: 'app-card-atleta',

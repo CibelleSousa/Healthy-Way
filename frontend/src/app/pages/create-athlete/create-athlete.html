@@ -1,0 +1,32 @@
+<div class="Main">
+<p class = "pageTitle">Adicionar Atleta</p>
+<div class="inputArea">
+    <p class = "title">ID</p>
+    <input class="inputField" type="number" [value]="id" (input)="id = $event.target.valueAsNumber">
+</div>
+<div class="inputArea">
+    <p class = "title">Nome</p>
+    <input class="inputField" type="text" [value]="name" (input)="name = $event.target.value">
+</div>
+<div class="inputArea">
+    <p class = "title">Idade</p>
+    <input class="inputField" type="number" [value]="age" (input)="age = $event.target.valueAsNumber">
+</div>
+<div class="inputArea">
+    <p class = "title">Altura</p>
+    <input class="inputField" type="number" [value]="height" (input)="height = $event.target.valueAsNumber">
+</div>
+<div class="inputArea">
+    <p class = "title">Peso</p>
+    <input class="inputField" type="number" [value]="weight" (input)="weight = $event.target.valueAsNumber">
+</div>
+<div class="inputArea">
+    <p class = "title">Foco</p>
+    <input class="inputField" type="text" [value]="focus" (input)="focus = $event.target.value">
+</div>
+<div class="inputArea">
+    <p class = "title">Gênero</p>
+    <input class="inputField" type="text" [value]="gender" (input)="gender = $event.target.value">
+</div>
+<button class="SendButton" (click)="submit()">Enviar</button>
+</div>

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, Observer } from 'rxjs';
 import Athlete from '../models/athlete.model';
 
 @Injectable({
@@ -23,5 +23,14 @@ export class AthleteService {
   getAthleteById(id: number): Observable<Athlete> {
     return this.http.get<Athlete>(`${this.apiUrl}/${id}`);
   }
+
+  deleteAthleteById(id: number): Observable<Athlete>{
+    return this.http.delete<Athlete>(`${this.apiUrl}/${id}`);
+  }
+
+  createAthlete(atleta: Athlete): Observable<Athlete>{
+    return this.http.patch<Athlete>(`${this.apiUrl}/${atleta.id}`, atleta);
+  }
+  
   
 }

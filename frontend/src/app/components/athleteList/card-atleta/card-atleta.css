@@ -16,6 +16,7 @@
     height: 400px;
     flex-shrink: 0;
     border-radius: 15px;
+    cursor: pointer;
     background: radial-gradient(85.36% 70% at 0% 0%, rgba(174, 205, 238, 0.00) 0%, #9747FF 100%), #974DFF;
     box-shadow: 0 0 15.2px 0 #451F6B, 0 0 13.1px 0 rgba(201, 150, 222, 0.33);
     #ProfileName{
@@ -30,6 +31,7 @@
     #ItemList{
         background: transparent;
     }
+    
 }
 #ProfileArea{
     display: flex;

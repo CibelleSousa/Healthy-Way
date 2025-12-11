@@ -1,0 +1,69 @@
+
+.Main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    justify-items: center;
+    column-gap: 10px;
+}
+.pageTitle{
+    font-family: roboto;
+    font-weight: 900;
+    font-size: 40px;
+}
+.inputArea{
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    column-gap: 0px;
+    box-sizing: content-box;
+    gap: 0px;
+    align-content: center;
+    justify-content: center;
+    justify-items: start;
+    align-items: start;
+    padding: 10px;
+    width: 500px;
+}
+.title{
+    font-size: 22px;
+    width: 550px;
+    font-family:  roboto;
+    text-align: start;
+    font-weight: 400;
+    font-style:  italic;
+    margin-bottom: 2px;
+    border-bottom: solid #962DFF;
+    margin-top: 0px;
+    margin-left: 5px;
+}
+.inputField{
+    width: 500px;
+    border: solid rgba(68, 68, 68, 0.388) 2px;
+    font-family: roboto;
+    font-size: 1.3rem;
+    padding-left: 5px;
+    font-weight: 300;
+    color: black;
+    font-style: italic;
+    box-sizing: content-box;
+    padding-right: 10px;
+}
+.SendButton{
+    margin-top: 10px;
+    justify-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #962DFF;
+    border-radius: 999px;
+    color: white;
+    font-weight: 500;
+    font-family: roboto;
+    border: none;
+    height: 50px;
+    width: 150px;
+    font-size: 30px;
+    cursor: pointer;
+}

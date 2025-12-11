@@ -1,6 +1,14 @@
 <div id="MainArea">
         <div id="MainProfileArea">
-            <app-info></app-info>
+            <div id="LeftSide">
+                <app-info></app-info>
+                <button 
+                type="button" 
+                class="apagar-botao"
+                (click)="handleClick()">
+                Apagar Atleta
+            </button>
+            </div>
             <div id="PhotoNav"></div>
             <img src="{{atleta.photoUrl}}" id="ProfilePic">
             <app-stats></app-stats>
