@@ -1,1 +1,365 @@
-<p>profile works!</p>
+<div class="profile-container">
+
+  <!-- Cabeçalho do Perfil -->
+  <header class="profile-header">
+    <div class="header-background"></div>
+    <div class="header-content">
+      <div class="profile-photo-section">
+        <div class="photo-wrapper">
+          <div class="profile-photo">
+            <i class="fa-solid fa-user-doctor"></i>
+          </div>
+          @if (!modoEdicao) {
+            <button class="btn-change-photo" (click)="alterarFoto()">
+              <i class="fa-solid fa-camera"></i>
+            </button>
+          }
+        </div>
+        <div class="profile-info">
+          <h1 class="profile-name">{{ profissional.nome }}</h1>
+          <p class="profile-specialty">{{ profissional.especialidade }}</p>
+          <p class="profile-crm">{{ profissional.crm }}</p>
+        </div>
+      </div>
+
+      @if (!modoEdicao) {
+        <button class="btn-edit-profile" (click)="ativarEdicao()">
+          <i class="fa-solid fa-pen"></i>
+          Editar Perfil
+        </button>
+      }
+    </div>
+  </header>
+
+  <!-- Estatísticas -->
+  <section class="statistics-section">
+    <div class="statistics-grid">
+      @for (stat of estatisticas; track stat.titulo) {
+        <div class="stat-card">
+          <div class="stat-icon" [style.background]="stat.cor + '20'" [style.color]="stat.cor">
+            <i [class]="stat.icone"></i>
+          </div>
+          <div class="stat-content">
+            <span class="stat-value">{{ stat.valor }}</span>
+            <span class="stat-label">{{ stat.titulo }}</span>
+          </div>
+        </div>
+      }
+    </div>
+  </section>
+
+  <!-- Conteúdo Principal -->
+  <div class="profile-content">
+
+    <!-- Modo Visualização -->
+    @if (!modoEdicao) {
+      <div class="content-grid">
+
+        <!-- Informações Pessoais -->
+        <div class="info-card">
+          <div class="card-header">
+            <h2 class="card-title">
+              <i class="fa-solid fa-user"></i>
+              Informações Pessoais
+            </h2>
+          </div>
+          <div class="card-body">
+            <div class="info-grid">
+              <div class="info-item">
+                <span class="info-label">
+                  <i class="fa-solid fa-envelope"></i>
+                  E-mail
+                </span>
+                <span class="info-value">{{ profissional.email }}</span>
+              </div>
+
+              <div class="info-item">
+                <span class="info-label">
+                  <i class="fa-solid fa-phone"></i>
+                  Telefone
+                </span>
+                <span class="info-value">{{ profissional.telefone }}</span>
+              </div>
+
+              <div class="info-item">
+                <span class="info-label">
+                  <i class="fa-solid fa-cake-candles"></i>
+                  Data de Nascimento
+                </span>
+                <span class="info-value">{{ profissional.dataNascimento }}</span>
+              </div>
+
+              <div class="info-item">
+                <span class="info-label">
+                  <i class="fa-solid fa-stethoscope"></i>
+                  Especialidade
+                </span>
+                <span class="info-value">{{ profissional.especialidade }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Endereço -->
+        <div class="info-card">
+          <div class="card-header">
+            <h2 class="card-title">
+              <i class="fa-solid fa-location-dot"></i>
+              Endereço
+            </h2>
+          </div>
+          <div class="card-body">
+            <div class="info-grid">
+              <div class="info-item full-width">
+                <span class="info-label">
+                  <i class="fa-solid fa-map-marker-alt"></i>
+                  Endereço
+                </span>
+                <span class="info-value">{{ profissional.endereco }}</span>
+              </div>
+
+              <div class="info-item">
+                <span class="info-label">
+                  <i class="fa-solid fa-city"></i>
+                  Cidade
+                </span>
+                <span class="info-value">{{ profissional.cidade }}</span>
+              </div>
+
+              <div class="info-item">
+                <span class="info-label">
+                  <i class="fa-solid fa-map"></i>
+                  Estado
+                </span>
+                <span class="info-value">{{ profissional.estado }}</span>
+              </div>
+
+              <div class="info-item">
+                <span class="info-label">
+                  <i class="fa-solid fa-mailbox"></i>
+                  CEP
+                </span>
+                <span class="info-value">{{ profissional.cep }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Biografia -->
+        <div class="info-card full-width">
+          <div class="card-header">
+            <h2 class="card-title">
+              <i class="fa-solid fa-file-lines"></i>
+              Sobre Mim
+            </h2>
+          </div>
+          <div class="card-body">
+            <p class="bio-text">{{ profissional.bio }}</p>
+          </div>
+        </div>
+      </div>
+    }
+
+    <!-- Modo Edição -->
+    @if (modoEdicao) {
+      <div class="edit-form">
+        <div class="form-card">
+          <div class="card-header">
+            <h2 class="card-title">
+              <i class="fa-solid fa-pen-to-square"></i>
+              Editar Informações
+            </h2>
+          </div>
+          <div class="card-body">
+            <form class="profile-form">
+
+              <!-- Informações Pessoais -->
+              <div class="form-section">
+                <h3 class="section-title">Informações Pessoais</h3>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">
+                      <i class="fa-solid fa-user"></i>
+                      Nome Completo
+                    </label>
+                    <input
+                      type="text"
+                      class="form-input"
+                      [(ngModel)]="profissionalEditado.nome"
+                      name="nome"
+                      placeholder="Digite seu nome completo">
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label">
+                      <i class="fa-solid fa-envelope"></i>
+                      E-mail
+                    </label>
+                    <input
+                      type="email"
+                      class="form-input"
+                      [(ngModel)]="profissionalEditado.email"
+                      name="email"
+                      placeholder="seu@email.com">
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">
+                      <i class="fa-solid fa-phone"></i>
+                      Telefone
+                    </label>
+                    <input
+                      type="tel"
+                      class="form-input"
+                      [(ngModel)]="profissionalEditado.telefone"
+                      name="telefone"
+                      placeholder="(00) 00000-0000">
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label">
+                      <i class="fa-solid fa-cake-candles"></i>
+                      Data de Nascimento
+                    </label>
+                    <input
+                      type="text"
+                      class="form-input"
+                      [(ngModel)]="profissionalEditado.dataNascimento"
+                      name="dataNascimento"
+                      placeholder="DD/MM/AAAA">
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">
+                      <i class="fa-solid fa-stethoscope"></i>
+                      Especialidade
+                    </label>
+                    <select
+                      class="form-select"
+                      [(ngModel)]="profissionalEditado.especialidade"
+                      name="especialidade">
+                      @for (esp of especialidades; track esp) {
+                        <option [value]="esp">{{ esp }}</option>
+                      }
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label">
+                      <i class="fa-solid fa-id-card"></i>
+                      CRM
+                    </label>
+                    <input
+                      type="text"
+                      class="form-input"
+                      [(ngModel)]="profissionalEditado.crm"
+                      name="crm"
+                      placeholder="CRM/UF 000000">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Endereço -->
+              <div class="form-section">
+                <h3 class="section-title">Endereço</h3>
+
+                <div class="form-row">
+                  <div class="form-group full-width">
+                    <label class="form-label">
+                      <i class="fa-solid fa-map-marker-alt"></i>
+                      Endereço
+                    </label>
+                    <input
+                      type="text"
+                      class="form-input"
+                      [(ngModel)]="profissionalEditado.endereco"
+                      name="endereco"
+                      placeholder="Rua, número, complemento">
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">
+                      <i class="fa-solid fa-city"></i>
+                      Cidade
+                    </label>
+                    <input
+                      type="text"
+                      class="form-input"
+                      [(ngModel)]="profissionalEditado.cidade"
+                      name="cidade"
+                      placeholder="Cidade">
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label">
+                      <i class="fa-solid fa-map"></i>
+                      Estado
+                    </label>
+                    <input
+                      type="text"
+                      class="form-input"
+                      [(ngModel)]="profissionalEditado.estado"
+                      name="estado"
+                      placeholder="UF"
+                      maxlength="2">
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label">
+                      <i class="fa-solid fa-mailbox"></i>
+                      CEP
+                    </label>
+                    <input
+                      type="text"
+                      class="form-input"
+                      [(ngModel)]="profissionalEditado.cep"
+                      name="cep"
+                      placeholder="00000-000">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Biografia -->
+              <div class="form-section">
+                <h3 class="section-title">Sobre Mim</h3>
+
+                <div class="form-group">
+                  <label class="form-label">
+                    <i class="fa-solid fa-file-lines"></i>
+                    Biografia
+                  </label>
+                  <textarea
+                    class="form-textarea"
+                    [(ngModel)]="profissionalEditado.bio"
+                    name="bio"
+                    rows="5"
+                    placeholder="Conte um pouco sobre sua experiência profissional..."></textarea>
+                </div>
+              </div>
+
+              <!-- Botões de Ação -->
+              <div class="form-actions">
+                <button type="button" class="btn-cancel" (click)="cancelarEdicao()">
+                  <i class="fa-solid fa-xmark"></i>
+                  Cancelar
+                </button>
+                <button type="button" class="btn-save" (click)="salvarPerfil()">
+                  <i class="fa-solid fa-check"></i>
+                  Salvar Alterações
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    }
+
+  </div>
+</div>

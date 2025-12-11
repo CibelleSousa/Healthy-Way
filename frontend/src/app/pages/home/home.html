@@ -1,1 +1,144 @@
-<p>home works!</p>
+<div class="dashboard-container">
+
+  <!-- Cabeçalho -->
+  <header class="dashboard-header">
+    <div class="header-content">
+      <div class="saudacao">
+        <h1 class="titulo-saudacao">Olá, {{ nomeProfissional }}</h1>
+        <p class="ultimo-acesso">
+          <i class="fa-solid fa-clock"></i>
+          Último acesso: {{ ultimoAcesso }}
+        </p>
+      </div>
+      <div class="header-actions">
+        <button class="btn-notificacoes">
+          <i class="fa-solid fa-bell"></i>
+          <span class="badge-notificacoes">{{ notificacoes.length }}</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Ações Rápidas -->
+  <section class="acoes-rapidas-section">
+    <h2 class="section-title">
+      <i class="fa-solid fa-bolt"></i>
+      Ações Rápidas
+    </h2>
+    <div class="acoes-rapidas-grid">
+      @for (acao of acoesRapidas; track acao.titulo) {
+        <div class="acao-card" (click)="navegarPara(acao.rota)">
+          <div class="acao-icone">
+            <i [class]="acao.icone"></i>
+          </div>
+          <span class="acao-titulo">{{ acao.titulo }}</span>
+        </div>
+      }
+    </div>
+  </section>
+
+  <!-- Cards de Resumo -->
+  <section class="resumo-section">
+    <h2 class="section-title">
+      <i class="fa-solid fa-chart-pie"></i>
+      Resumo do Dia
+    </h2>
+    <div class="resumo-grid">
+      @for (card of cardsResumo; track card.titulo) {
+        <div class="resumo-card" (click)="navegarPara(card.rota || '')">
+          <div class="card-header-resumo">
+            <i [class]="card.icone" [style.color]="card.cor"></i>
+          </div>
+          <div class="card-body-resumo">
+            <h3 class="card-valor">{{ card.valor }}</h3>
+            <p class="card-titulo">{{ card.titulo }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </section>
+
+  <!-- Consultas e Notificações -->
+  <div class="content-grid">
+    <!-- Consultas do Dia -->
+    <section class="consultas-section">
+      <div class="section-header">
+        <h2 class="section-title">
+          <i class="fa-solid fa-calendar-day"></i>
+          Consultas do Dia
+        </h2>
+      </div>
+
+      <div class="table-container">
+        <table class="consultas-table">
+          <thead>
+            <tr>
+              <th>Atleta</th>
+              <th>Horário</th>
+              <th>Profissional</th>
+              <th>Status</th>
+              <th>Ação</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (consulta of consultasDia; track consulta.id) {
+              <tr>
+                <td class="atleta-nome">
+                  <i class="fa-solid fa-user-circle"></i>
+                  {{ consulta.atleta }}
+                </td>
+                <td class="horario">
+                  <i class="fa-solid fa-clock"></i>
+                  {{ consulta.horario }}
+                </td>
+                <td class="profissional">{{ consulta.profissional }}</td>
+                <td>
+                  <span [class]="'status-badge ' + getStatusClass(consulta.status)">
+                    {{ consulta.status }}
+                  </span>
+                </td>
+                <td>
+                  <button class="btn-acao" (click)="abrirConsulta(consulta.id)">
+                    <i class="fa-solid fa-eye"></i>
+                    Ver
+                  </button>
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Notificações Recentes -->
+    <section class="notificacoes-section">
+      <div class="section-header">
+        <h2 class="section-title">
+          <i class="fa-solid fa-bell"></i>
+          Notificações Recentes
+        </h2>
+      </div>
+
+      <div class="notificacoes-lista">
+        @for (notificacao of notificacoes; track notificacao.id) {
+          <div [class]="'notificacao-item ' + getNotificacaoClass(notificacao.tipo)">
+            <div class="notificacao-icone">
+              @if (notificacao.tipo === 'alerta') {
+                <i class="fa-solid fa-triangle-exclamation"></i>
+              } @else if (notificacao.tipo === 'sucesso') {
+                <i class="fa-solid fa-circle-check"></i>
+              } @else {
+                <i class="fa-solid fa-circle-info"></i>
+              }
+            </div>
+            <div class="notificacao-conteudo">
+              <p class="notificacao-mensagem">{{ notificacao.mensagem }}</p>
+              <span class="notificacao-tempo">{{ notificacao.tempo }}</span>
+            </div>
+          </div>
+        }
+      </div>
+    </section>
+  </div>
+
+</div>

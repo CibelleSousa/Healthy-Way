@@ -1,0 +1,579 @@
+/* ========== CONTAINER PRINCIPAL ========== */
+.dashboard-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 30px 40px;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  animation: fadeIn 0.5s ease-out;
+  color: #ffffff;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========== CABEÇALHO ========== */
+.dashboard-header {
+  background: linear-gradient(135deg, #962DFF 0%, #7261A3 100%);
+  border-radius: 20px;
+  padding: 30px 40px;
+  margin-bottom: 40px;
+  box-shadow: 0 8px 32px rgba(150, 45, 255, 0.3);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.saudacao {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.titulo-saudacao {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ultimo-acesso {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ultimo-acesso i {
+  font-size: 13px;
+}
+
+.header-actions {
+  display: flex;
+  gap: 15px;
+}
+
+.btn-notificacoes {
+  position: relative;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-notificacoes:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.05);
+}
+
+.badge-notificacoes {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #EF4444;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 7px;
+  border-radius: 10px;
+  border: 2px solid #962DFF;
+}
+
+/* ========== TÍTULOS DE SEÇÃO ========== */
+.section-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #C893FD;
+  margin: 0 0 25px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  letter-spacing: -0.3px;
+}
+
+.section-title i {
+  font-size: 20px;
+  color: #962DFF;
+}
+
+/* ========== AÇÕES RÁPIDAS ========== */
+.acoes-rapidas-section {
+  margin-bottom: 40px;
+}
+
+.acoes-rapidas-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.acao-card {
+  background: radial-gradient(77.17% 108.57% at 14.13% 11.44%, rgba(190, 212, 232, 0.00) 0%, rgba(146, 129, 225, 0.56) 100%), #FFF;
+  border: 2px solid transparent;
+  border-radius: 16px;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.acao-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.acao-icone {
+  width: 70px;
+  height: 70px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.acao-icone i {
+  font-size: 32px;
+  color: #451F6B;
+}
+
+.acao-titulo {
+  font-size: 16px;
+  font-weight: 600;
+  color: #451F6B;
+  text-align: center;
+}
+
+/* ========== CARDS DE RESUMO ========== */
+.resumo-section {
+  margin-bottom: 40px;
+}
+
+.resumo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.resumo-card {
+  background: linear-gradient(145deg, #1E1E1E 0%, #252525 100%);
+  border: 1px solid #2A2A2A;
+  border-radius: 16px;
+  padding: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.resumo-card:hover {
+  transform: translateY(-4px);
+  border-color: #962DFF;
+  box-shadow: 0 8px 24px rgba(150, 45, 255, 0.3);
+}
+
+.card-header-resumo {
+  margin-bottom: 15px;
+}
+
+.card-header-resumo i {
+  font-size: 32px;
+}
+
+.card-body-resumo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card-valor {
+  font-size: 36px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1;
+}
+
+.card-titulo {
+  font-size: 14px;
+  color: #B0B0B0;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ========== GRID DE CONTEÚDO ========== */
+.content-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+/* ========== SEÇÃO DE CONSULTAS ========== */
+.consultas-section {
+  background: linear-gradient(145deg, #1E1E1E 0%, #252525 100%);
+  border: 1px solid #2A2A2A;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.section-header {
+  margin-bottom: 25px;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.consultas-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.consultas-table thead {
+  background: rgba(150, 45, 255, 0.1);
+  border-bottom: 2px solid rgba(150, 45, 255, 0.3);
+}
+
+.consultas-table th {
+  padding: 15px 12px;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 600;
+  color: #C893FD;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.consultas-table tbody tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.consultas-table tbody tr:hover {
+  background: rgba(150, 45, 255, 0.05);
+}
+
+.consultas-table td {
+  padding: 18px 12px;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.atleta-nome {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+}
+
+.atleta-nome i {
+  color: #962DFF;
+  font-size: 18px;
+}
+
+.horario {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #B0B0B0;
+}
+
+.horario i {
+  color: #962DFF;
+  font-size: 14px;
+}
+
+.profissional {
+  color: #B0B0B0;
+}
+
+/* Status Badges */
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: inline-block;
+}
+
+.status-agendada {
+  background: rgba(96, 165, 250, 0.15);
+  color: #60A5FA;
+  border: 1px solid rgba(96, 165, 250, 0.3);
+}
+
+.status-confirmada {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10B981;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.status-em-andamento {
+  background: rgba(245, 158, 11, 0.15);
+  color: #F59E0B;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.status-concluida {
+  background: rgba(139, 92, 246, 0.15);
+  color: #8B5CF6;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+/* Botão de Ação */
+.btn-acao {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: rgba(150, 45, 255, 0.1);
+  border: 1px solid rgba(150, 45, 255, 0.3);
+  border-radius: 8px;
+  color: #C893FD;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-acao:hover {
+  background: rgba(150, 45, 255, 0.2);
+  border-color: #962DFF;
+  color: #ffffff;
+}
+
+.btn-acao i {
+  font-size: 14px;
+}
+
+/* ========== SEÇÃO DE NOTIFICAÇÕES ========== */
+.notificacoes-section {
+  background: linear-gradient(145deg, #1E1E1E 0%, #252525 100%);
+  border: 1px solid #2A2A2A;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.notificacoes-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.notificacao-item {
+  display: flex;
+  gap: 15px;
+  padding: 15px;
+  border-radius: 12px;
+  border-left: 4px solid;
+  transition: all 0.3s ease;
+}
+
+.notificacao-alerta {
+  background: rgba(239, 68, 68, 0.1);
+  border-left-color: #EF4444;
+}
+
+.notificacao-info {
+  background: rgba(59, 130, 246, 0.1);
+  border-left-color: #3B82F6;
+}
+
+.notificacao-sucesso {
+  background: rgba(16, 185, 129, 0.1);
+  border-left-color: #10B981;
+}
+
+.notificacao-item:hover {
+  transform: translateX(5px);
+}
+
+.notificacao-icone {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.notificacao-alerta .notificacao-icone {
+  background: rgba(239, 68, 68, 0.15);
+  color: #EF4444;
+}
+
+.notificacao-info .notificacao-icone {
+  background: rgba(59, 130, 246, 0.15);
+  color: #3B82F6;
+}
+
+.notificacao-sucesso .notificacao-icone {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10B981;
+}
+
+.notificacao-conteudo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.notificacao-mensagem {
+  font-size: 13px;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.notificacao-tempo {
+  font-size: 11px;
+  color: #B0B0B0;
+}
+
+/* ========== RESPONSIVIDADE ========== */
+@media (max-width: 1200px) {
+  .acoes-rapidas-grid,
+  .resumo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 20px;
+  }
+
+  .dashboard-header {
+    padding: 20px;
+  }
+
+  .titulo-saudacao {
+    font-size: 24px;
+  }
+
+  .acoes-rapidas-grid,
+  .resumo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .acao-card {
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 20px;
+  }
+
+  .acao-icone {
+    width: 60px;
+    height: 60px;
+  }
+
+  .acao-icone i {
+    font-size: 28px;
+  }
+
+  .acao-titulo {
+    text-align: left;
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+
+  .consultas-section,
+  .notificacoes-section {
+    padding: 20px;
+  }
+
+  .table-container {
+    overflow-x: auto;
+  }
+
+  .consultas-table {
+    min-width: 600px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-container {
+    padding: 15px;
+  }
+
+  .dashboard-header {
+    padding: 15px;
+  }
+
+  .header-content {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .titulo-saudacao {
+    font-size: 20px;
+  }
+
+  .btn-notificacoes {
+    width: 45px;
+    height: 45px;
+  }
+
+  .acao-card {
+    padding: 15px;
+  }
+
+  .acao-icone {
+    width: 50px;
+    height: 50px;
+  }
+
+  .acao-icone i {
+    font-size: 24px;
+  }
+
+  .card-valor {
+    font-size: 28px;
+  }
+
+  .section-title {
+    font-size: 18px;
+  }
+}
